@@ -1,0 +1,10 @@
+name: JSM85 Blog
+safe: true
+lsi: false
+markdown: redcarpet
+
+pygments: true
+
+timezone: Europe/London
+prose:
+  rooturl: '_posts'
