@@ -1,5 +1,8 @@
 ---
-published: false
+published: true
+layout: post
+date: {}
+categories: git branch
 ---
 
 ## A quick post on Git Branches
@@ -18,4 +21,3 @@ git branch -a --merged
 ```
 git branch -d [BRANCH NAME]
 ```
-
