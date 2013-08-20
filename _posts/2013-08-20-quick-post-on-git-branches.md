@@ -5,7 +5,7 @@ date:       2013-08-20 14:21:49
 categories: git branch
 ---
 
-## A quick post on Git Branches
+## Git branch commands
 
 This is just a quick post with some git commands that I always tend to forget! Hopefully by writing about it I'll remember it from now on... wishful thinking.
 
