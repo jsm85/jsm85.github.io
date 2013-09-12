@@ -166,7 +166,7 @@ class Program
 }
 {% endhighlight %}
 
-<a href="/assets/235_Blog.LuceneNetExample.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="Blog.LuceneNetExample" alt="Blog.LuceneNetExample" src="/assets/236_Blog.LuceneNetExample_thumb.png" width="613" height="311" border="0" /></a>
+<a href="/assets/content/235_Blog.LuceneNetExample.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border:0;" title="Blog.LuceneNetExample" alt="Blog.LuceneNetExample" src="/assets/content/236_Blog.LuceneNetExample_thumb.png" width="613" height="311" border="0" /></a>
 
 
 ## Additional Points

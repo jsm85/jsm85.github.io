@@ -21,7 +21,7 @@ I have been wanting to write this blog post for a long time now; today I finally
 
 **The Problem:** Manually having to deploy the SSIS package, or use the SQL Server import functionality can lead to lots of human error! It's inevitable. we've been bitten too many times in the past!! **FAIL** .
 
-**The Solution:** We've actually solved this problem by building SSIS support in our Continuous Integration to automatically deploy the packages to the correct environment. No manual intervention required! <img class="wlEmoticon wlEmoticon-smile" style="border-style:none;" alt="Smile" src="/assets/197_wlEmoticon-smile.png" />
+**The Solution:** We've actually solved this problem by building SSIS support in our Continuous Integration to automatically deploy the packages to the correct environment. No manual intervention required! <img class="wlEmoticon wlEmoticon-smile" style="border-style:none;" alt="Smile" src="/assets/content/197_wlEmoticon-smile.png" />
 
 &nbsp;
 
@@ -37,4 +37,4 @@ I was then told by the DBA's that the new shared instance of the SQL Server has 
 
 These are just 3 quick reasons why I have had enough of this tool. I could be here all day writing about all my bad experiences but to be honest I can think of better things to be doing on a Sunday.
 
-The moral of the story. *AVOID THIS TOOL* like the plague or how you would avoid making eye contact with a female in a bar in Thailand in fear she actually might be a he! . But if you must use it then it should ***only*** be used if you a moving data from one MS SQL Server to another MS SQL Server where the schema and security is exactly the same! I'd even go as far as saying the servers should be in the same building! On the same network! But even then I'd rather use a console app hooked up to a windows task scheduler or hire an intern to manually enter the data line by line <img class="wlEmoticon wlEmoticon-smile" style="border-style:none;" alt="Smile" src="/assets/197_wlEmoticon-smile.png" />. There are many other ways to transfer data from source to destination. and if you appreciate having hair just don't use SSIS.
+The moral of the story. *AVOID THIS TOOL* like the plague or how you would avoid making eye contact with a female in a bar in Thailand in fear she actually might be a he! . But if you must use it then it should ***only*** be used if you a moving data from one MS SQL Server to another MS SQL Server where the schema and security is exactly the same! I'd even go as far as saying the servers should be in the same building! On the same network! But even then I'd rather use a console app hooked up to a windows task scheduler or hire an intern to manually enter the data line by line <img class="wlEmoticon wlEmoticon-smile" style="border-style:none;" alt="Smile" src="/assets/content/197_wlEmoticon-smile.png" />. There are many other ways to transfer data from source to destination. and if you appreciate having hair just don't use SSIS.

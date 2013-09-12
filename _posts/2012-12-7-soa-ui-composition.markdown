@@ -11,7 +11,7 @@ Although Udi touched on this subject, with good examples of usage in the world, 
 
 When your users access your system, they may be interacting with services being hosted in multiple locations or in the cloud, etc. but their experience must be seamless! That is important. They do not want/expect to have to access multiple systems to carry out an action. A great example, and one that I use often when talking about SOA, is Amazon. There are a number of services that are running behind the scenes at Amazon, like a Shipping service, or an Ordering or Payment service, but to the user it is just one site. [www.amazon.com](http://www.amazon.com)
 
-<a href="/assets/244_image.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border:0;" title="image" alt="image" src="/assets/245_image_thumb.png" width="728" height="412" border="0" /></a>
+<a href="/assets/content/244_image.png"><img style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border:0;" title="image" alt="image" src="/assets/content/245_image_thumb.png" width="728" height="412" border="0" /></a>
 
 Back the question. how is this achieved? What strategies are being used? How are the Amazon's of the world doing this?
 

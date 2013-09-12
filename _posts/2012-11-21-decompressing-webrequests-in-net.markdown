@@ -7,7 +7,7 @@ categories:   Beat The Bookie
 
 Just a quick post about decompressing web requests in .Net. **Beat The Bookie** makes calls to the [William Hill API](http://pricefeeds.williamhill.com/bet/en-gb?action=GoPriceFeed) for market prices, but when making a call to it using DownloadString from the WebClient type, returned random characters. I spun up fiddler and saw that the response was being compressed.
 
-<a href="/assets/208_WebRequest_Fiddler_GZip"><img class="alignnone size-medium wp-image-208" title="WebRequest_Fiddler_GZip" alt="" src="/assets/208_WebRequest_Fiddler_GZip?w=300" height="217" width="300" /></a>
+<a href="/assets/content/208_WebRequest_Fiddler_GZip"><img class="alignnone size-medium wp-image-208" title="WebRequest_Fiddler_GZip" alt="" src="/assets/content/208_WebRequest_Fiddler_GZip?w=300" height="217" width="300" /></a>
 
 Here is my solution for solving this:
 
