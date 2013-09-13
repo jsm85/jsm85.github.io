@@ -1,8 +1,9 @@
 ---
-layout:       post
-title:        Gamification
-date:         31/01/2013 13:38:07
-categories:   Blog
+layout:       	post
+title:        	Gamification
+date:         	31/01/2013 13:38:07
+categories:   	Blog
+tags : 			[Gamification]
 ---
 
 <p>I came across a new term I had not heard of before which I found very interesting. It's not a new term, in-fact according to Wikipedia the term was coined in 2002 but only begun becoming popular in 2010.</p>  
