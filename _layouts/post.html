@@ -7,3 +7,8 @@ layout: default
 <div class="post">
 {{ content }}
 </div>
+
+{% for tag in site.tags %} 
+	<span class="label label-success">{{ tag[0] }}</span>
+{% endfor %}
+
