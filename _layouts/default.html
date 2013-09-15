@@ -39,10 +39,10 @@
                     <li><a href="/about.html">About Me</i></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://github.com/jsm85/"><i class="icon-github"></i></a></li>
-                    <li><a href="http://twitter.com/jsmendonca85/"><i class="icon-twitter"></i></a></li>
-                    <li><a href="http://www.linkedin.com/in/jsm85"><i class="icon-linkedin-sign"></i></a></li>
-                    <li><a href="http://www.linkedin.com/in/jsm85"><i class="icon-rss"></i></a></li>
+                    <li><a href="http://github.com/jsm85/" target="_blank"><i class="icon-github"></i></a></li>
+                    <li><a href="http://twitter.com/jsmendonca85/" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://www.linkedin.com/in/jsm85" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
+                    <li><a href="/rss.xml" target="_blank"><i class="icon-rss"></i></a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -66,6 +66,14 @@
     {% for post in site.posts limit:5 offset:0 %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="well sidebar-nav">
+                        <h3>Links</h3>
+                        <ul class="nav">
+                            <li>Gav's Blog</li>
+                            <li>Albert's Blog</li>
+                            <li>Richards's Blog</li>
                         </ul>
                     </div>
                 </div>
