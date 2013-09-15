@@ -33,9 +33,12 @@
                 </a>
             </div>
             <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/archive.html">Archive</a></li>
+                    <li><a href="/about.html">About Me</i></a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/"><i class="icon-home"></i></a></li>
-                    <li><a href="/about.html"><i class="icon-info-sign"></i></a></li>
                     <li><a href="http://github.com/jsm85/"><i class="icon-github"></i></a></li>
                     <li><a href="http://twitter.com/jsmendonca85/"><i class="icon-twitter"></i></a></li>
                     <li><a href="http://www.linkedin.com/in/jsm85"><i class="icon-linkedin-sign"></i></a></li>
@@ -58,9 +61,9 @@
                 </div>
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas-left" id="sidebar" role="navigation">
                     <div class="well sidebar-nav">
-                        <h3>Posts</h3>
+                        <h3>Recent posts</h3>
                         <ul class="nav" id="posttree">
-{% for post in site.posts %}
+    {% for post in site.posts limit:5 offset:0 %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
                         </ul>
