@@ -2,8 +2,8 @@
 layout:       post
 title:        Searching with Lucene.Net
 date:         15/01/2013 09:57:40
-categories:   Lucene
-tags:         [Lucene.Net, Search, Tutorial]
+categories:   Tutorial
+tags:         Lucene
 ---
 
 My team and I have been working hard lately to drag our legacy suite of applications, kicking and screaming, into the 21st century. One area we have started looking at recently is a Google Type search using Lucene.Net and moving away from the traditional search controls with a ridiculous amount of drop down filters.

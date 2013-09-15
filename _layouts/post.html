@@ -2,13 +2,16 @@
 layout: default
 ---
 <h2>{{ page.title }}</h2>
+
+<div>
 <p class="meta">{{ page.date | date_to_string }}</p>
+<span class="label label-success">{{ page.tags }}</span>
+</div>
 
 <div class="post">
 {{ content }}
 </div>
 
-{% for tag in site.tags %} 
-	<span class="label label-success">{{ tag[0] }}</span>
-{% endfor %}
+
+
 

@@ -2,7 +2,8 @@
 published:  true
 layout:     post 
 date:       2013-08-20 14:21:49
-categories: git branch
+categories: Tutorial
+tags:		Git
 ---
 
 ## Git branch commands

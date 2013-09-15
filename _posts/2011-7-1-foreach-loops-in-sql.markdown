@@ -1,8 +1,9 @@
 ---
-layout:       post
-title:        foreach loops in SQL
-date:         01/07/2011 12:11:32
-categories:   T-SQL
+layout:       	post
+title:        	foreach loops in SQL
+date:         	01/07/2011 12:11:32
+categories:   	Tutorial
+tags:			T-SQL
 ---
 
 If you don't want to use a cursor, here is a strategy that should work...

@@ -1,8 +1,9 @@
 ---
-layout:       post
-title:        SOA UI Composition
-date:         07/12/2012 17:19:11
-categories:   Blog SOA SOA Patterns UI Composition
+layout:       	post
+title:        	SOA UI Composition
+date:         	07/12/2012 17:19:11
+categories:   	Blog
+tags:			SOA
 ---
 
 I attended Udi Dahan's [Advanced Distributed Systems Design with SOA](http://skillsmatter.com/course/nosql/advanced-distributed-systems-design-with-soa) course about a year ago and it changed me and my view on software development for good. It made me reflect on how I developed software, where I was going wrong and opened my mind to a whole new world that I thought I knew a lot about but actually didn't. It was a real eye opener and it certainly made me a better software engineer. I couldn't recommend this course enough!! Since then I haven't looked back; my team and I have adopted a lot of the things I learnt with Udi and have evolved our systems to a whole new level.
