@@ -7,8 +7,10 @@ title: Blog
     <p class="pull-right visible-xs">
         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
     <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+    	{% for post in site.posts limit:1 %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content | truncatewords: 25 }}</p>
+        {% endfor %}
     </div>
     <div class="row">
         <div class="col-6 col-sm-6 col-lg-4">
