@@ -5,6 +5,7 @@ title: Blog
 
 <div class="col-xs-12 col-mid-8">
     <div class="jumbotron">
+	<img style="position: absolute; top: 0; right: 0; border: 0;" src="/assets/latest_post.png" alt="Latest Post">
     	{% for post in site.posts limit:1 %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.content | truncatewords: 25 }}</p>
