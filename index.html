@@ -4,12 +4,12 @@ title: Blog
 ---
 
 <div class="col-xs-12 col-mid-8">
-    <p class="pull-right visible-xs">
-        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
     <div class="jumbotron">
     	{% for post in site.posts limit:1 %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.content | truncatewords: 25 }}</p>
+        <p><a class="pull-right btn btn-primary" href="{{ post.url }}">Read More</a></p>
+    </br>
         {% endfor %}
     </div>
     <div class="row">
