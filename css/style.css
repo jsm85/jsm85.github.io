@@ -6,3 +6,13 @@ body {
 .logo{
   height: 30px;
 }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('your/path/fontawesome-webfont.eot?v=3.0.1');
+  src: url('your/path/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('your/path/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('your/path/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
