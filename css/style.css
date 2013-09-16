@@ -16,3 +16,16 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+
+.latest-post-banner {
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	border: 0;
+	padding-right: 15px;
+}
+
+.row-fix {
+	padding-left: 15px;
+}
