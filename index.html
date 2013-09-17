@@ -1,7 +1,17 @@
 ---
 layout: default
-title: Blog
+title: Index
 ---
+
+<script type="text/javascript">
+
+ // $.getJSON('https://api.github.com/users/{{ site.personal.github_id }}/repos?type=public', function(json) {
+ //   $.each(json,function(i, value){
+ //        $('#GitHubRepos').append('<div class="col-6 col-sm-6 col-lg-4"><h2>'+ value.name +'</h2><p>' + value.description + '</p><p><a class="btn btn-default" href="'+ value.html_url +'">View details</a></p></div>');
+ //        });
+//});
+
+</script>
 
 <div class="col-xs-12 col-mid-8">
     <div class="jumbotron">
@@ -13,21 +23,21 @@ title: Blog
     </br>
         {% endfor %}
     </div>
-    <div class="row row-fix">
+    <div class="row row-fix" id="GitHubRepos">
         <div class="col-6 col-sm-6 col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-            <p><a class="btn btn-default" href="#">View details »</a></p>
+            <h2 class="githubRepoList-header">Jekyll Blog Importer</h2>
+            <p class="githubRepoList-description">A utility to help migrate a Wordpress blog to Jekyll.</p>
+            <p><a class="btn btn-default" href="https://github.com/jsm85/JekyllBlogImporter">View details</a></p>
         </div>
         <div class="col-6 col-sm-6 col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-            <p><a class="btn btn-default" href="#">View details »</a></p>
+            <h2 class="githubRepoList-header">Jekyll Blog Starter Pack</h2>
+            <p class="githubRepoList-description">A starter pack for creating your very own Jekyll (Bootstrap enabled) Blog site.</p>
+            <p><a class="btn btn-default" href="https://github.com/jsm85/JekyllBlogStarterPack">View details</a></p>
         </div>
         <div class="col-6 col-sm-6 col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-            <p><a class="btn btn-default" href="#">View details »</a></p>
+            <h2 class="githubRepoList-header">Mq-SSIS</h2>
+            <p class="githubRepoList-description">Pronounced M-Q-Sis - RabbitMQ support in MS SQL Server 2008 R2 SSIS.</p>
+            <p><a class="btn btn-warning disabled" href="#">COMING SOON</a></p>
         </div>
     </div>
 </div>

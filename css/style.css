@@ -17,7 +17,6 @@ body {
   font-style: normal;
 }
 
-
 .latest-post-banner {
 	position: absolute; 
 	top: 0; 
@@ -28,4 +27,13 @@ body {
 
 .row-fix {
 	padding-left: 15px;
+}
+
+.githubRepoList-header{
+	height: 65px;
+}
+
+
+.githubRepoList-description{
+	height: 80px;
 }

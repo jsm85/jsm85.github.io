@@ -39,9 +39,9 @@
                     <li><a href="/about.html">About Me</i></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://github.com/jsm85/" target="_blank"><i class="icon-github"></i></a></li>
-                    <li><a href="http://twitter.com/jsmendonca85/" target="_blank"><i class="icon-twitter"></i></a></li>
-                    <li><a href="http://www.linkedin.com/in/jsm85" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
+                    <li><a href="http://github.com/{{ site.personal.github_id }}/" target="_blank"><i class="icon-github"></i></a></li>
+                    <li><a href="http://twitter.com/{{ site.personal.twitter_id }}/" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://www.linkedin.com/in/{{ site.personal.linkedin_id }}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
                     <li><a href="/rss.xml" target="_blank"><i class="icon-rss"></i></a></li>
                 </ul>
             </div>
@@ -79,8 +79,6 @@
                 </div>
             </div>
 
-            
-
             <div class="footer">
                 <div class="contact">
                     <p>
@@ -91,11 +89,12 @@
     </div>
     <!-- /container -->
 
+{% if site.google_analytics_tracking_id %}
     <!-- Analytics -->
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-39754237-1']);
+      _gaq.push(['_setAccount', '{{ site.google_analytics_tracking_id }}']);
       _gaq.push(['_trackPageview']);
 
       (function() {
@@ -105,5 +104,7 @@
       })();
 
     </script>
+{% endif %}
+
 </body>
 </html>

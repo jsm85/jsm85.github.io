@@ -1,9 +1,16 @@
 name: JSM85
 safe: true
-lsi: false
 markdown: redcarpet
 pygments: true
 
 timezone: Europe/London
+
 prose:
   rooturl: '_posts'
+
+personal:
+  github_id: jsm85
+  twitter_id: JSMendonca85
+  linkedin_id: jsm85
+
+google_analytics_tracking_id: UA-39754237-1
