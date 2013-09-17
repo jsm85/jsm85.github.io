@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ site.name }} - {{ page.title }}</title>
+    <title>{{ site.title }} - {{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -28,7 +28,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">{{ site.name }}
+                <a class="navbar-brand" href="/">{{ site.title }}
             <!-- <img src="/assets/logo.png" class="logo"/> -->
                 </a>
             </div>
@@ -39,9 +39,9 @@
                     <li><a href="/about.html">About Me</i></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://github.com/{{ site.personal.github_id }}/" target="_blank"><i class="icon-github"></i></a></li>
-                    <li><a href="http://twitter.com/{{ site.personal.twitter_id }}/" target="_blank"><i class="icon-twitter"></i></a></li>
-                    <li><a href="http://www.linkedin.com/in/{{ site.personal.linkedin_id }}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
+                    <li><a href="http://github.com/{{ site.author.github_id }}/" target="_blank"><i class="icon-github"></i></a></li>
+                    <li><a href="http://twitter.com/{{ site.author.twitter_id }}/" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://www.linkedin.com/in/{{ site.author.linkedin_id }}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
                     <li><a href="/rss.xml" target="_blank"><i class="icon-rss"></i></a></li>
                 </ul>
             </div>

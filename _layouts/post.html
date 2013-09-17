@@ -5,8 +5,18 @@ layout: default
 
 <div>
 <p class="meta">{{ page.date | date_to_string }}</p>
-<span class="label label-success">{{ page.tags }}</span>
+
+{% for category in page.categories %}
+<span class="label label-primary">{{ category | capitalize }}</span>
+{% endfor %}
+
+{% for tag in page.tags %}
+<span class="label label-success">{{ tag | capitalize }}</span>
+{% endfor %}
+
 </div>
+
+</br>
 
 <div class="post">
 {{ content }}
