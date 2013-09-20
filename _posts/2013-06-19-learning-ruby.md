@@ -47,12 +47,12 @@ testObject.CanMutateAString
 
 When can see from the output that the values after mutation for both the `wordToMutate` the `referenceToOriginalWord` variables have changed. Ruby has not created a copy of the value like in .Net.
 
-![Mutable Strings](/assets/content/Blog_LearningRuby/01.PNG)
+![Mutable Strings](/assets/content/Blog_LearningRuby/01.png)
 
 ### Example in .Net
 We can see that in C# if we try to change the character of a string at a particular position, we get a compiler error informing us that there is no setter (hence the immutable):  
 
-![Mutable Strings](/assets/content/Blog_LearningRuby/02.PNG)
+![Mutable Strings](/assets/content/Blog_LearningRuby/02.png)
 
 ...and just for completeness the code below is a port of the Ruby example above, and you can see from the output that strings are immutable in C#.
 
@@ -78,7 +78,7 @@ class Program
 }
 {% endhighlight %}
 
-![Mutable Strings](/assets/content/Blog_LearningRuby/03.PNG)
+![Mutable Strings](/assets/content/Blog_LearningRuby/03.png)
 
 ## Mixins
 
@@ -139,7 +139,7 @@ testing = DuckTyping.new
 testing.ThisShouldInTheoryTakeInANumber 4
 {% endhighlight %}
 
-![Duck Typing](/assets/content/Blog_LearningRuby/04.PNG)
+![Duck Typing](/assets/content/Blog_LearningRuby/04.png)
 
 So what happens when we pass in a string like `"4"`...
 
@@ -148,7 +148,7 @@ testing = DuckTyping.new
 testing.ThisShouldInTheoryTakeInANumber "4"
 {% endhighlight %}
 
-![Duck Typing](/assets/content/Blog_LearningRuby/05.PNG)
+![Duck Typing](/assets/content/Blog_LearningRuby/05.png)
 
 Nothing ground breaking here, a string was passed in and although we applied a "mathematical" operation, it was still valid. What was returned here was the value `"44"` and a type of `string`. This is because the `*` operator has been overridden for the `string` type. We would get a compile error in .Net unless we created our own type and overrode the `*` operator ourselves.
 
@@ -165,6 +165,6 @@ testing = DuckTyping.new
 testing.ThisShouldInTheoryTakeInANumber FooType.new
 {% endhighlight %}
 
-![Duck Typing](/assets/content/Blog_LearningRuby/06.PNG)
+![Duck Typing](/assets/content/Blog_LearningRuby/06.png)
 
 Before the `*` operation occurred, the type was of type `FooType` as expected, but after the `*` it was of type `FixNum`... Magic!! ...not really... What these 3 examples prove is that you can pass anything into the method in Ruby, it's not type safe, hence why it’s called a dynamic language. In order to ensure your application behaves how you expect, some checking should happen to ensure the type your method receives is what is expected.
