@@ -17,5 +17,6 @@ pygments: 		true
 
 prose:
   rooturl: 		'_posts'
+  media:		'assets'
 
 google_analytics_tracking_id: UA-39754237-1
