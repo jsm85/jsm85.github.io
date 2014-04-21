@@ -20,5 +20,6 @@ This blog will assume you already have a Node application ready to be deployed a
 ![AzureNodeBlog_CreateNewWebsite.PNG](/assets/AzureNodeBlog_CreateNewWebsite.PNG)
 ![AzureNodeBlog_AddEnvironmentVariables.PNG](/assets/AzureNodeBlog_AddEnvironmentVariables.PNG)
 ![AzureNodeBlog_VisitPage.PNG](/assets/AzureNodeBlog_VisitPage.PNG)
+![AzureNodeBlog_ViewWebsites.PNG](/assets/AzureNodeBlog_ViewWebsites.PNG)
 
 
