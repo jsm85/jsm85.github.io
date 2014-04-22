@@ -1,5 +1,9 @@
 ---
 published: true
+layout: post
+date: {}
+categories: Tutorial
+tags: Node
 ---
 
 ## Running Node on Azure
