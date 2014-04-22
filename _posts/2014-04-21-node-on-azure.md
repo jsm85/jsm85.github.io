@@ -1,9 +1,10 @@
 ---
-published: true
-layout: post
-date: {}
+published: 	true
+layout: 	post
+title:		Node on Windows Azure
+date: 		2014-04-21 09:00:00
 categories: Tutorial
-tags: Node
+tags: 		Node
 ---
 
 ## Running Node on Azure

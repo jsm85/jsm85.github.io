@@ -6,7 +6,7 @@ categories: tutorial
 tags:		
 ---
 
-It's been a while since I had looked at SpecFlow; Infact, I believe the last time I used it was about 3 years ago for a big project we had at work. The project involved merging a recently aquired company's business into our systems which required a significant change to a few systems. We saw this as a great opportunity to spec out the product using gherkin style acceptance tests. 
+
 
 Take two...
 
