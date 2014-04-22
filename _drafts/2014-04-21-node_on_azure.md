@@ -45,6 +45,6 @@ If we revisit our site, you will see we have successfully deployed our site to W
 
 A really great feature of Windows Azure is the ability to roll back to a previous version, so if there was a commit that should not have been pushed went live, you can easily roll back to a previous version.
 
-In a future post, I will explore how to create a custome build and deployment script so we can enable testing and ensure the build successfully passes all the tests before deployment.
+In a future post, I will explore how to create a custom build and deployment script so we can enable testing and ensure the build successfully passes all the tests before deployment.
 
 There you have it, Continuous Integration and Delivery made simple with Node on Windows Azure. Enjoy!
