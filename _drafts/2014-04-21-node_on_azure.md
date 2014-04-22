@@ -13,12 +13,19 @@ Azures feature rich offerings can cater for a magnitude of solutions. This blog 
 When you log into the Windows Azure Portal and click on Websites on the left hand side, you will see a new context menu appear. Click on ```New```.
 ![AzureNodeBlog_NewWebsite.PNG](/assets/AzureNodeBlog_NewWebsite.PNG)
 
-A wizard-style menu will now pop-up and you should select ```Compute``` then ```Web Site``` then on ```Quick Create```. Finally enter the name of the website (a little green tick should appear indicating that the site name is valid and is not already occupied) and select the region you wish to host your site.
+A wizard-style menu will now pop-up and you should select ```COMPUTE``` then ```WEB SITE``` then on ```QUICK CREATE```. Finally enter the name of the website in the ```URL``` box (a little green tick should appear indicating that the site name is valid and is not already occupied) and select the region you wish to host your site.
 ![AzureNodeBlog_CreateNewWebsite.PNG](/assets/AzureNodeBlog_CreateNewWebsite.PNG)
 
+In a few seconds you will see that your website has now been created for you on the free tier. You can choose to move to a shared instance or a dedicated instance in the configuration panel of your website. For the purposes of this demo we will leave it on the free tier.
 ![AzureNodeBlog_NewWebsiteCreated.PNG](/assets/AzureNodeBlog_NewWebsiteCreated.PNG)
+
+Now that we have created our web site, we need to tell Azure where to find the source. As mentioned before, we will be using our source that is hosted on GitHub for this demo, but it doesn't have to be. In fact, there are a number of options here, including using Visual Studio Online (which is basically TFS in the cloud).
 ![AzureNodeBlog_IntegrateSource.PNG](/assets/AzureNodeBlog_IntegrateSource.PNG)
+
+After selecting GitHub as our source (You may have to authorize Azure to access your GitHub repositories first) you can now find the repository in the list. Select the appropriate one and click the finish button.
 ![AzureNodeBlog_IntegrateSourceSelectTool.PNG](/assets/AzureNodeBlog_IntegrateSourceSelectTool.PNG)
+
+
 ![AzureNodeBlog_IntegrateSourceSelectRepo.PNG](/assets/AzureNodeBlog_IntegrateSourceSelectRepo.PNG)
 ![AzureNodeBlog_IntegrateSourceDeploying.PNG](/assets/AzureNodeBlog_IntegrateSourceDeploying.PNG)
 ![AzureNodeBlog_IntegrateSourceDeployed.PNG](/assets/AzureNodeBlog_IntegrateSourceDeployed.PNG)
