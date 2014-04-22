@@ -37,3 +37,7 @@ body {
 .githubRepoList-description{
 	height: 80px;
 }
+
+img{
+  max-width: 800px;
+}
