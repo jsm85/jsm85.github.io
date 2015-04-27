@@ -14,30 +14,12 @@ title: Index
 </script>
 
 <div class="col-xs-12 col-mid-8">
-    <div class="jumbotron">
+    <div class="card">
 	<img class="latest-post-banner" src="/assets/latest_post.png" alt="Latest Post">
     	{% for post in site.posts limit:1 %}
         <h1>{{ post.title }}</h1>
-        <p>{{ post.content | truncatewords: 25 }}</p>
-        <p><a class="pull-right btn btn-primary" href="{{ post.url }}">Read More</a></p>
+        <p>{{ post.content }}</p>
     </br>
         {% endfor %}
-    </div>
-    <div class="row padding-fix" id="GitHubRepos">
-        <div class="col-6 col-sm-6 col-lg-4">
-            <h2 class="githubRepoList-header">Jekyll Blog Importer</h2>
-            <p class="githubRepoList-description">A utility to help migrate a Wordpress blog to Jekyll.</p>
-            <p><a class="btn btn-primary" href="https://github.com/jsm85/JekyllBlogImporter">View details</a></p>
-        </div>
-        <div class="col-6 col-sm-6 col-lg-4">
-            <h2 class="githubRepoList-header">Jekyll Blog Starter Pack</h2>
-            <p class="githubRepoList-description">A starter pack for creating your very own Jekyll (Bootstrap enabled) Blog site.</p>
-            <p><a class="btn btn-primary" href="https://github.com/jsm85/JekyllBlogStarterPack">View details</a></p>
-        </div>
-        <div class="col-6 col-sm-6 col-lg-4">
-            <h2 class="githubRepoList-header">Mq-SSIS</h2>
-            <p class="githubRepoList-description">Pronounced M-Q-Sis - RabbitMQ support in MS SQL Server 2008 R2 SSIS.</p>
-            <p><a class="btn btn-warning disabled" href="#">COMING SOON</a></p>
-        </div>
     </div>
 </div>

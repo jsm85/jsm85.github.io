@@ -1,5 +1,5 @@
 body {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 
@@ -22,22 +22,29 @@ body {
 	top: 0; 
 	right: 0; 
 	border: 0;
-	padding-right: 15px;
+	padding-right: -15px;
 }
 
 .padding-fix {
 	padding-left: 15px;
 }
 
-.githubRepoList-header{
-	height: 65px;
-}
-
-
-.githubRepoList-description{
-	height: 80px;
-}
-
 img{
-  max-width: 800px;
+  max-width: 700px;
+}
+
+.site{
+  float: inherit;
+  margin-top: -20px;
+}
+
+.banner-img{
+  background:url(../assets/background.png) center center; 
+  background-size:cover;
+  height: 200px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
 }

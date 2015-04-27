@@ -13,15 +13,14 @@
 
     <!-- syntax highlighting CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-    <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="/css/main.css"> -->
 
-    <script src="/lib/jquery/jquery.1.9.1.js"></script>
-    <script src="/lib/bootstrap/bootstrap.js"></script>
-    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/lib/bootstrap/bootstrap-responsive.css">
-    <link rel="stylesheet" href="/lib/font-awesome/font-awesome.css">
-    <link rel="stylesheet" href="/css/style.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+    <link href="/dist/css/roboto.min.css" rel="stylesheet">
+    <link href="/dist/css/material.min.css" rel="stylesheet">
+    <link href="/dist/css/ripples.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -48,18 +47,25 @@
             <!--/.nav-collapse -->
         </div>
     </div>
-
-
+<div class="banner-img">
+</div>
 
     <div class="container">
 
         <div class="site">
 
+
             <div class="row row-offcanvas row-offcanvas-right">
+
                 <div class="col-xs-12 col-sm-9">
+
                     {{ content }}
                 </div>
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas-left" id="sidebar" role="navigation">
+                <div class="well sidebar-nav">
+                        <h3>About Me</h3>
+                        <p>Some text about me</p>
+                    </div>
                     <div class="well sidebar-nav">
                         <h3>Recent posts</h3>
                         <ul class="nav" id="posttree">
@@ -109,6 +115,18 @@
 
     </script>
 {% endif %}
+
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <script src="/dist/js/ripples.min.js"></script>
+        <script src="/dist/js/material.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // This command is used to initialize some elements and make them work properly
+                $.material.init();
+            });
+        </script>
 
 </body>
 </html>
