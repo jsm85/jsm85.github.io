@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="/css/syntax.css">
 
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="/lib/bootstrap/bootstrap.css" rel="stylesheet">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
     <link href="/dist/css/roboto.min.css" rel="stylesheet">
     <link href="/dist/css/material.min.css" rel="stylesheet">
@@ -24,7 +25,7 @@
 </head>
 <body>
 
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top nav-shadow">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">{{ site.title }}
@@ -32,17 +33,17 @@
                 </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-left">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
                     <li><a href="/archive.html">Archive</a></li>
                     <li><a href="/about.html">About Me</i></a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <!--ul class="nav navbar-nav navbar-right">
                     <li><a href="http://github.com/{{ site.author.github_id }}/" target="_blank"><i class="icon-github"></i></a></li>
                     <li><a href="http://twitter.com/{{ site.author.twitter_id }}/" target="_blank"><i class="icon-twitter"></i></a></li>
                     <li><a href="http://www.linkedin.com/in/{{ site.author.linkedin_id }}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
                     <li><a href="/rss.xml" target="_blank"><i class="icon-rss"></i></a></li>
-                </ul>
+                </ul-->
             </div>
             <!--/.nav-collapse -->
         </div>
@@ -116,8 +117,10 @@
     </script>
 {% endif %}
 
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <!--script src="//code.jquery.com/jquery-1.10.2.min.js"></script-->
+        <!--script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script-->
+<script src="/lib/jquery/jquery.1.9.1.js"></script>
+<script src="/lib/bootstrap/bootstrap.js"></script>
 
         <script src="/dist/js/ripples.min.js"></script>
         <script src="/dist/js/material.min.js"></script>

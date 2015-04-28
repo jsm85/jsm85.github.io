@@ -25,10 +25,6 @@ body {
 	padding-right: -15px;
 }
 
-.padding-fix {
-	padding-left: 15px;
-}
-
 img{
   max-width: 700px;
 }
@@ -45,6 +41,9 @@ img{
 }
 
 .card {
-  background-color: white;
   padding: 20px;
+}
+
+.nav-shadow {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,.1),0 3px 10px 0 rgba(0,0,0,.19);
 }
