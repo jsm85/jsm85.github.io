@@ -3,21 +3,20 @@ layout: default
 title: Index
 ---
 
-<script type="text/javascript">
+{% for post in site.posts limit:3 %}
+<div class="card no-border-card">
+    <img src="/assets/blog.jpg" class="about-me-img"/>
+	
 
- // $.getJSON('https://api.github.com/users/{{ site.personal.github_id }}/repos?type=public', function(json) {
- //   $.each(json,function(i, value){
- //        $('#GitHubRepos').append('<div class="col-6 col-sm-6 col-lg-4"><h2>'+ value.name +'</h2><p>' + value.description + '</p><p><a class="btn btn-default" href="'+ value.html_url +'">View details</a></p></div>');
- //        });
-//});
+	<div class="panel-footer">
+	<a href="{{ post.url }}"><button class="btn btn-fab btn-raised btn-primary button-offset"><i class="mdi-navigation-arrow-forward"></i></button></a>
+    	
+    	<h1>{{ post.title }}</h1>
+    	{{ post.date | date_to_string }}
+   		<p>{{ post.excerpt }}</p>
+	</div>
+</div>
+{% endfor %}
 
-</script>
 
-    <div class="card post">
-	<img class="latest-post-banner" src="/assets/latest_post.png" alt="Latest Post">
-    	{% for post in site.posts limit:1 %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.excerpt }}</p>
-    </br>
-        {% endfor %}
-    </div>
+

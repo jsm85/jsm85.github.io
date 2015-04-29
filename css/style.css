@@ -26,24 +26,71 @@ body {
 }
 
 img{
-  max-width: 700px;
+  max-width: 100%;
 }
 
 .site{
   float: inherit;
   margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 .banner-img{
   background:url(../assets/background.png) center center; 
   background-size:cover;
-  height: 200px;
+  height: 250px;
 }
 
 .card {
   padding: 20px;
+  margin-bottom: 19px;
 }
 
 .nav-shadow {
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,.1),0 3px 10px 0 rgba(0,0,0,.19);
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,.1),0 3px 10px 0 rgba(0,0,0,.19);
+}
+
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f1f1f5;
+  border-top: 1px solid #eee;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  background-color: rgba(17,17,17,.7);
+  border: 0;
+  color: white;
+}
+
+#footerwrap {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #384452;
+}
+
+.navbar-no-bottom-margin {
+  margin-bottom: 0px;
+}
+
+.no-border-card{
+  padding: 0px;
+}
+
+.no-border-img{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-origin: center;
+  background-size: 100%
+}
+
+.button-offset{
+  position: absolute;
+  right: 5%;
+
+  top: -25px;
 }

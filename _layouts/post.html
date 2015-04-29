@@ -3,25 +3,25 @@ layout: default
 ---
 
 <div class="post padding-fix card">
-<h2>{{ page.title }}</h2>
+	<h2>{{ page.title }}</h2>
 
-<div>
-<p class="meta">{{ page.date | date_to_string }}</p>
+	<div>
+		<p class="meta">{{ page.date | date_to_string }}</p>
 
-{% for category in page.categories %}
-<span class="label label-primary">{{ category | capitalize }}</span>
-{% endfor %}
+		{% for category in page.categories %}
+		<span class="label label-primary">{{ category | capitalize }}</span>
+		{% endfor %}
 
-{% for tag in page.tags %}
-<span class="label label-success">{{ tag | capitalize }}</span>
-{% endfor %}
+		{% for tag in page.tags %}
+		<span class="label label-success">{{ tag | capitalize }}</span>
+		{% endfor %}
 
-</div>
+	</div>
 
 </br>
 
 <div>
-{{ content }}
+	{{ content }}
 </div>
 </div>
 
