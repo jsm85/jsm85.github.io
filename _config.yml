@@ -12,7 +12,7 @@ author:
 safe: 			true
 timezone: 		Europe/London
 
-highlighter: 		true
+
 markdown: 		kramdown
 permalink: pretty
 
