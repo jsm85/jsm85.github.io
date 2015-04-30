@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="/css/syntax.css">
 
 
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <!-- <link href="/lib/bootstrap/bootstrap.css" rel="stylesheet"> -->
+        <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+        <link href="/lib/bootstrap/bootstrap.css" rel="stylesheet">
         <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
         <link href="/dist/css/roboto.min.css" rel="stylesheet">
         <link href="/dist/css/material.min.css" rel="stylesheet">
@@ -43,12 +43,6 @@
                         <li><a href="http://twitter.com/{{ site.author.twitter_id }}/" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
                         <li><a href="/rss.xml" target="_blank"><i class="fa fa-rss fa-lg"></i></a></li>
                     </ul>
-                <!--ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://github.com/{{ site.author.github_id }}/" target="_blank"><i class="icon-github"></i></a></li>
-                    <li><a href="http://twitter.com/{{ site.author.twitter_id }}/" target="_blank"><i class="icon-twitter"></i></a></li>
-                    <li><a href="http://www.linkedin.com/in/{{ site.author.linkedin_id }}" target="_blank"><i class="icon-linkedin-sign"></i></a></li>
-                    <li><a href="/rss.xml" target="_blank"><i class="icon-rss"></i></a></li>
-                </ul-->
             </div>
             <!--/.nav-collapse -->
         </div>
@@ -67,7 +61,7 @@
                     {{ content }}
 
                 </div>
-                <div class="col-xs-6 col-sm-3 sidebar-offcanvas-left" id="sidebar" role="navigation">
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas-left hidden-xs" id="sidebar" role="navigation">
 
                     <div class="card sidebar-nav no-border-card">
                     <img src="https://avatars.githubusercontent.com/u/1835096?v=3" class="no-border-img">
@@ -106,12 +100,6 @@
     </div>
 
 </div>
-<!-- /container -->
-                    <!--nav class="navbar navbar-default navbar-static-bottom navbar-no-bottom-margin shadow-z-4">
-  <div class="container">
-    
-  </div>
-</nav-->
 
 {% if site.google_analytics_tracking_id %}
 <!-- Analytics -->
@@ -130,10 +118,10 @@
 </script>
 {% endif %}
 
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<!-- <script src="/lib/jquery/jquery.1.9.1.js"></script> -->
-<!-- <script src="/lib/bootstrap/bootstrap.js"></script> -->
+<!-- <script src="//code.jquery.com/jquery-1.10.2.min.js"></script> -->
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+<script src="/lib/jquery/jquery.1.9.1.js"></script>
+<script src="/lib/bootstrap/bootstrap.js"></script>
 
 <script src="/dist/js/ripples.min.js"></script>
 <script src="/dist/js/material.min.js"></script>
