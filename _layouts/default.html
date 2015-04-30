@@ -9,32 +9,40 @@
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+          <![endif]-->
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+          <!-- syntax highlighting CSS -->
+          <link rel="stylesheet" href="/css/syntax.css">
 
 
-         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> 
-         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
-<!--        <link href="/lib/bootstrap/bootstrap.css" rel="stylesheet">-->
-        <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-        <link href="/dist/css/roboto.min.css" rel="stylesheet">
-        <link href="/dist/css/material.min.css" rel="stylesheet">
-        <link href="/dist/css/ripples.min.css" rel="stylesheet">
-        <link href="/css/style.css" rel="stylesheet">
-<!--        <link href="/lib/font-awesome/font-awesome.css" rel="stylesheet">-->
-    </head>
-    <body>
+          <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> 
+          <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+          <!--        <link href="/lib/bootstrap/bootstrap.css" rel="stylesheet">-->
+          <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+          <link href="/dist/css/roboto.min.css" rel="stylesheet">
+          <link href="/dist/css/material.min.css" rel="stylesheet">
+          <link href="/dist/css/ripples.min.css" rel="stylesheet">
+          <link href="/css/style.css" rel="stylesheet">
+          <!--        <link href="/lib/font-awesome/font-awesome.css" rel="stylesheet">-->
+      </head>
+      <body>
+
 
         <div class="navbar navbar-default navbar-fixed-top shadow-z-2">
             <div class="container">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand" href="/">{{ site.title }}
                         <!-- <img src="/assets/logo.png" class="logo"/> -->
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
                         <li><a href="/archive/index.html">Archive</a></li>
@@ -43,83 +51,83 @@
                         <li><a href="http://twitter.com/{{ site.author.twitter_id }}/" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
                         <li><a href="/rss.xml" target="_blank"><i class="fa fa-rss fa-lg"></i></a></li>
                     </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </div>
-    <div class="banner-img">
-    </div>
-
-    <div class="container">
-
-        <div class="site">
-
-            <div class="row row-offcanvas row-offcanvas-right">
-
-                <div class="col-xs-12 col-sm-9">
-
-                    {{ content }}
-
                 </div>
-                <div class="col-xs-6 col-sm-3 sidebar-offcanvas-left hidden-xs" id="sidebar" role="navigation">
-
-                    <div class="card sidebar-nav no-border-card">
-                    <img src="https://avatars.githubusercontent.com/u/1835096?v=3" class="no-border-img">
-
-                        <div class="panel-footer">
-                            <a href="/about/index.html"><button class="btn btn-fab btn-raised btn-primary button-offset"><i class="mdi-navigation-arrow-forward"></i></button></a>
-                            <p>About me</p>
-                        </div>
-                    </div>
-                    
-                    <div class="well sidebar-nav">
-                        <h3>Recent posts</h3>
-                        <ul class="nav" id="posttree">
-                            {% for post in site.posts limit:5 offset:0 %}
-                            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-
-                    <div class="well sidebar-nav">
-                        <h3>Links</h3>
-                        <ul class="nav">
-                            <li><a href="http://devrabbithole.blogspot.co.uk/" target="_blank">Albert's Blog</a></li>
-                            <li><a href="http://glewster.wordpress.com/" target="_blank">Glewster's Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="card sidebar-nav no-border-card">
-                        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/JSMendonca85" data-widget-id="381406067462131712">Tweets by @JSMendonca85</a>
-                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                    </div>
-                </div> 
+                <!--/.nav-collapse -->
             </div>
-
-
         </div>
+        <div class="banner-img">
+        </div>
+
+        <div class="container">
+
+            <div class="site">
+
+                <div class="row row-offcanvas row-offcanvas-right">
+
+                    <div class="col-xs-12 col-sm-9">
+
+                        {{ content }}
+
+                    </div>
+                    <div class="col-xs-6 col-sm-3 sidebar-offcanvas-left hidden-xs" id="sidebar" role="navigation">
+
+                        <div class="card sidebar-nav no-border-card">
+                            <img src="https://avatars.githubusercontent.com/u/1835096?v=3" class="no-border-img">
+
+                            <div class="panel-footer">
+                                <a href="/about/index.html"><button class="btn btn-fab btn-raised btn-primary button-offset"><i class="mdi-navigation-arrow-forward"></i></button></a>
+                                <p>About me</p>
+                            </div>
+                        </div>
+
+                        <div class="well sidebar-nav">
+                            <h3>Recent posts</h3>
+                            <ul class="nav" id="posttree">
+                                {% for post in site.posts limit:5 offset:0 %}
+                                <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="well sidebar-nav">
+                            <h3>Links</h3>
+                            <ul class="nav">
+                                <li><a href="http://devrabbithole.blogspot.co.uk/" target="_blank">Albert's Blog</a></li>
+                                <li><a href="http://glewster.wordpress.com/" target="_blank">Glewster's Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="card sidebar-nav no-border-card">
+                            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/JSMendonca85" data-widget-id="381406067462131712">Tweets by @JSMendonca85</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                    </div> 
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
 
-</div>
+    {% if site.google_analytics_tracking_id %}
+    <!-- Analytics -->
+    <script type="text/javascript">
 
-{% if site.google_analytics_tracking_id %}
-<!-- Analytics -->
-<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.google_analytics_tracking_id }}']);
+      _gaq.push(['_trackPageview']);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.google_analytics_tracking_id }}']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
 </script>
 {% endif %}
 
- <script src="//code.jquery.com/jquery-1.10.2.min.js"></script> 
- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script> 
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
 <!--<script src="/lib/jquery/jquery.1.9.1.js"></script>-->
 <!--<script src="/lib/bootstrap/bootstrap.js"></script>-->
 
