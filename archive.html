@@ -9,8 +9,8 @@ title: Archive
     <thead>
       <tr>
         <th>Post Date</th>
-        <th>Category</th>
-        <th>Tag</th>
+        <th class="hidden-xs">Category</th>
+        <th class="hidden-xs">Tag</th>
         <th>Title</th>
       </tr>
     </thead>
@@ -18,8 +18,8 @@ title: Archive
      {% for post in site.posts %}
      <tr>
       <td>{{ post.date | date_to_string }}</td>
-      <td>{{ post.categories | join: ', ' | capitalize }}</td>
-      <td>{{ post.tags | join: ', ' }}</td>
+      <td class="hidden-xs">{{ post.categories | join: ', ' | capitalize }}</td>
+      <td class="hidden-xs">{{ post.tags | join: ', ' }}</td>
       <td><a href="{{ post.url }}">{{ post.title }}</a></td>
     </tr>
     {% endfor %}
