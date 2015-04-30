@@ -12,8 +12,10 @@ author:
 safe: 			true
 timezone: 		Europe/London
 
-markdown: 		redcarpet
-pygments: 		true
+highlighter: 		true
+markdown: 		kramdown
+permalink: pretty
+
 
 prose:
   rooturl: 		'_posts'
