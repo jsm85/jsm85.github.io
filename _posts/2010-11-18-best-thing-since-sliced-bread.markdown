@@ -15,6 +15,3 @@ Here's some useful links
 	<li>TeamCity: <a href="http://www.jetbrains.com/teamcity/" target="_blank">http://www.jetbrains.com/teamcity/</a></li>
 	<li>Continuous Integration: <a href="http://www.martinfowler.com/articles/continuousIntegration.html" target="_blank">http://www.martinfowler.com/articles/continuousIntegration.html</a></li>
 </ul>
-<br/>
-
-**** **Tutorial on how to get CI setup using TeamCity to follow.** ****
