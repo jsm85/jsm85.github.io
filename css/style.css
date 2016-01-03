@@ -36,9 +36,7 @@ img{
 }
 
 .banner-img{
-  background:url(../assets/background.png) center center; 
-  background-size:cover;
-  height: 250px;
+  height: 50px;
 }
 
 .card {
