@@ -7,9 +7,4 @@ tags:		Jekyll
 blogId:     17
 ---
 
-I have finally released version 1 of the Jekyll Blog Importer utility. It is available to download [here](https://github.com/jsm85/JekyllBlogImporter/releases/tag/v1.0.0.64)
-
-In the next few blog posts I will be writing a tutorial on how to get set up with Jekyll on Windows, migrating a blog from wordpress, creating a jekyll blog site using this [starter pack](https://github.com/jsm85/JekyllBlogStarterPack), styling the blog using [Bootswatch](http://bootswatch.com/) and deploying the blog to Github.
-
-Stay Tuned!
-
+I have finally released version 1 of the Jekyll Blog Importer utility. It is available to download [here](https://bitbucket.org/jsm_development/jekyllblogimporter/get/999b96999228.zip)
