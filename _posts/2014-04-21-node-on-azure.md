@@ -5,6 +5,7 @@ title:		Node on Windows Azure
 date: 		2014-04-21 09:00:00
 categories: Tutorial
 tags: 		Node
+blogId:     18
 ---
 
 I recently attended a Windows Azure User Group Meet-Up in London where we were shown some of the cool features Windows Azure has to offer from quickly hosting websites to Infrastructure-as-a-Service. The Meet-Up also included a mini-hackathon, where my team took 1st place for delivering a Node site using the Marvel API and hosted it on Windows Azure. Check out the site [here](http://gwabhack.azurewebsites.net).

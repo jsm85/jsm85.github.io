@@ -4,6 +4,7 @@ title:        	...I think I need therapy having been using SSIS for so long
 date:         	13/09/2012 17:44:50
 categories:   	Blog
 tags:			SSIS
+blogId:         9
 ---
 
 I have been wanting to write this blog post for a long time now; today I finally found enough motivation to do so having been mentally and emotional crippled by MS SQL SSIS. Many moons ago when I started my development career, I had so many ambitions, ideas, hope and a full head of beautiful thick black hair. Since then I have been losing quite a bit of hair and I have been led to believe that the reason why I have lost so much hair has simply been due to male pattern baldness. until today! I now firmly believe my hair loss has actually been caused by the amount of stress SSIS has caused me over the years. I'm about to explain exactly why.

@@ -4,6 +4,7 @@ title:        	Learning Ruby
 date:       	2013-06-19 12:00:00
 categories: 	Blog
 tags:        	Ruby
+blogId:         15
 ---
 
 I have been trying to learn a new language recently… Ruby. Ruby is a dynamic language created in the 90’s by [Yukihiro "Matz" Matsumoto](http://en.wikipedia.org/wiki/Yukihiro_Matsumoto). I have been using C# and .Net for over 7 years, so moving to a dynamic language has been a bit of a mind shift but I have really enjoyed the journey so far.

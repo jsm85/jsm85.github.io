@@ -4,6 +4,7 @@ title:        	Best thing since sliced bread
 date:         	18/11/2010 02:32:36
 categories:   	Blog
 tags:			TeamCity
+blogId:         1
 ---
 
 Yep, you guessed it...I'm talking about TeamCity by jetbrains. It's a fairly mature product now and one I have been using for 2 « years but I can't praise it enough and thought it deserved some attention on my blog. Its "continuous integration for dummies" (I mean that in the nicest possible way :) ).

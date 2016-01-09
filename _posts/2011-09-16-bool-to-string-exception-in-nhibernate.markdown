@@ -4,6 +4,7 @@ title:        	bool to string Exception in NHibernate
 date:         	16/09/2011 14:05:59
 categories:   	Tutorial
 tags:			NHibernate
+blogId:         5
 ---
 
 <p>When I logged into my blog to write a new post, I realised I had 2 posts still in draft... I have been neglecting my blog a hell of a lot... anyway, here's a post I really wanted to write as this issue got me a couple of times, but never again!</p>  <p>**[Background:** this application uses SQL Server 2005 and NHibernate as the ORM. Our tables all have IsDeleted (bool), LastUpdated (datetime) and LastUpdatedBy (varchar) for audit purposes**]**</p>  <p>I ran into an issue sometime ago when writing a Linq query whilst trying to return items from the db where the IsDeleted flag was set to false like this:</p> 

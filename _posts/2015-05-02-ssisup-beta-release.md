@@ -5,6 +5,7 @@ title:		SsisUp - Beta Release
 date: 		2015-05-02 21:00:00
 categories: Announcement
 tags: 		SsisUp
+blogId:     19
 ---
 
 I have Open-Sourced SsisUp, a .Net library that is used to automate the deployments of MS SQL Server Integration Services. Check out the repo [here](https://github.com/jsm85/SsisUp) and on NuGet [here](http://www.nuget.org/packages/SsisUp/). It is currently in beta and I would appreciate any feedback.

@@ -4,6 +4,7 @@ title:        	Decompressing WebRequests in .Net
 date:         	21/11/2012 23:12:21
 categories:   	Tutorial
 tags:			WebRequest
+blogId:         10
 ---
 
 Just a quick post about decompressing web requests in .Net. **Beat The Bookie** makes calls to the [William Hill API](http://pricefeeds.williamhill.com/bet/en-gb?action=GoPriceFeed) for market prices, but when making a call to it using DownloadString from the WebClient type, returned random characters. I spun up fiddler and saw that the response was being compressed.

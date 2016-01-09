@@ -4,6 +4,7 @@ title:        	MVVM - Training
 date:         	28/12/2010 18:49:27
 categories:   	Blog
 tags:			MVVM
+blogId:         2
 ---
 
 For anybody interested learning or understanding how the M-V-VM pattern works please checkout Karl Shifflet's in-the-box training <a href="http://karlshifflett.wordpress.com/2010/11/07/in-the-box-ndash-mvvm-training/" target="_blank">here</a>.
