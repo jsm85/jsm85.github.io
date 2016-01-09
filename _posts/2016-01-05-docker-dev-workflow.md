@@ -50,7 +50,7 @@ It should take a few minutes, but after that you will have all three services ru
     
 ...this will show you all the processes running, there should be three.
 
-![Docker PS](/assets/articles/20/docker_ps.png)
+![Docker PS](/assets/articles/20/docker_ps.PNG)
 
 Let's try connecting to one of the services. To find out the IP address of your Docker machine, run the following command:
 
