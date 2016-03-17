@@ -1,5 +1,5 @@
 ---
-published: 	false
+published: 	true
 layout: 	post
 title:		Linking Containers using Docker-Compose
 date: 		2016-02-17 20:00:00
@@ -57,7 +57,7 @@ This command will now execute the configuration in the yml file. It will pull do
     
 You should see all 3 processes up and running like so:
 
-image
+![Process](/assets/articles/25/processes.PNG)
 
 For the next part of the tutorial we'll need to know the IP address of your Docker machine. Execute the following command:
 
@@ -65,20 +65,15 @@ For the next part of the tutorial we'll need to know the IP address of your Dock
 
 Let's now test our application; open a new browser and navigate to the website we just deployed: ```http://[DOCKER_HOST_IP]:5000``` in my case it's ```http://192.168.99.100:5000```. As mentioned in the intro, this application is a simple one, and it's only feature is to send a text input as a message that the Background Service will output to the console.
 
-image
+![WebUI](/assets/articles/25/webui.PNG)
 
 Add some text in the input and press Send. If you now revisit the Docker Quickstart Terminal, you will see that your message was received by the service and outputted to the console.
 
-image
+![Service](/assets/articles/25/service.PNG)
 
-The main take away that I want to draw your attention to is the connection string for the RabbitMQ broker service.
+The main take away that I want to draw your attention to is the connection string for the RabbitMQ broker service. The connection string for connecting to RabbitMQ is the name of the alias in the compose file.
 
      var bus = RabbitHutch.CreateBus("host=rabbit");
 
-The connection string for connecting to RabbitMQ is the name of the alias in the compose file:
-
-image
-
-Some text about linking from Docker Documentation
 
 Thanks for reading and I hope you found this informative.
