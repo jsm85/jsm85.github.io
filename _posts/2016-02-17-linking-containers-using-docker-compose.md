@@ -14,15 +14,13 @@ Over the last couple of months, I've been on a quite a journey with Docker and M
 
 For this tutorial, I have put together a sample application to demonstrate linking containers and how they can be accessed. In this example, I have an ASP.Net Core 1.0 MVC6 Website, a Background Service (Console Application that will run as a deamon) and a RabbitMQ instance. This application just sends text that the user inputs in the website to the background service using RabbitMQ as the middleware. The sample was purposely kept simple so that the concept is clearly understood.
 
-Here is what the architecture looks like:
 
-### Prerequisites for Tutorial
+#### Prerequisites for Tutorial
 * Local Machine running Docker (version 1.9 at the time of writing this tutorial)
 * a Web browser, such as Google Chrome
 
 *For simplicity, I have deployed these images to the DockerHub so that we can focus on the Docker Compose file*
 
-## Docker-Compose
 
 Before I look at consul and other service discovery tools, I wanted to understand how linking works in Docker using Docker-Compose. I love the idea of compose! the ability to fit all the pieces of the application together like a jigsaw using a single yaml file sounds awesome... but as the compose documentation highlights, this shouldn't be used in production! So doesn't seem the right approach when thinking about how we will deploy / orchestrate our applications in Production. It's a good first step toward understanding how linked containers are pinned together.
 
