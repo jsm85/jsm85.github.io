@@ -10,7 +10,7 @@ blogId:     25
 
 Over the last couple of months, I've been on a quite a journey with Docker and Microservices. I have the goal of moving some of our monolith applications to a Microservice based architecture using Docker. Up until recently, most of the containers I have been working with have been single isolated containers. As I start to think about how we're going to break apart the monolith, I can't help but think about how we're going to pin all the parts of our system together. I've been reading about Service Discovery a bit and I understand it conceptually for the moment, which is enough. This journey I am on is not a race, as I want to fully understand how, what and why we would want to build our applications this way.
 
-*PLEASE NOTE: I am using Docker 1.9 in this tutorial*
+**PLEASE NOTE:** *I am using Docker 1.9 in this tutorial*
 
 For this tutorial, I have put together a sample application to demonstrate linking containers and how they can be accessed. In this example, I have an ASP.Net Core 1.0 MVC6 Website, a Background Service (Console Application that will run as a deamon) and a RabbitMQ instance. This application just sends text that the user inputs in the website to the background service using RabbitMQ as the middleware. The sample was purposely kept simple so that the concept is clearly understood.
 

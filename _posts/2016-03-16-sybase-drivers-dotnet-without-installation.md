@@ -10,7 +10,7 @@ blogId:     27
 
 This is a very short post that will help any developers that need to work with Sybase in .Net. We are currently working on a project that needs to connect to a Sybase database. But we want to connect to Sybase without having to install the big mammoth installation!
 
-**Please note, this blog uses Sybase v15.02**
+**PLEASE NOTE:** *this blog uses Sybase v15.02*
 
 For my example, we're not using the most recent version of Sybase; In order for this to work, you'll need to get hold of the following assemblies. In my case, I installed the mammoth Sybase installation on a VM and then extracted the assemblies I needed.
 
@@ -25,7 +25,7 @@ Add these assemblies to you project (Include in project).
 
 Next, select the ```sybdrvado20.dll``` in the project and set the output property to copy to output.
 
-![Properties](/assets/27/properties.PNG)
+![Properties](/assets/articles/27/properties.PNG)
 
 Finally, add a reference to the ```Sybase.AdoNet2.AseClient.dll``` in the project references.
 

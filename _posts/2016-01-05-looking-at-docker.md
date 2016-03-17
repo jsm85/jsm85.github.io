@@ -28,8 +28,6 @@ By breaking down our application into smaller services, we introduced a new set 
 - Reduce operations in the team
 - Focus on Business Value
 - Get rid of our environments and just have production only (The reason i'm mostly excited about - more on this in another blog)
- 
-## Initial thoughts
 
 So let's bring this all back to the original question, what is Docker? well, put simply Docker is a container based platform technology. It's not quite a PaaS, but it's almost like a half way house. In-fact, this white paper from Docker refers to it as CaaS (Container-as-a-Service). Building applications on the CaaS model means we don't need to know too much about the infrastructure (as we have our Infrastructure team taking care of that) but we still get a good control of the configuration of the application, things like the framework version, any specific environment settings, ports, etc... This CaaS model feels right at the moment for our team. It still gives us some degree of flexibility, configuration control and less needing to worry about OS level operations.
 
@@ -42,7 +40,7 @@ Here are some of the other benefits I can see for my team moving to Docker:
 - No more "works on my machine" but doesn't work on production situations
 
 Here is a small list of resources I've been reading and viewing:
-* [Docker Documentation](http://docs.docker.com)
-* [Docker White Paper](https://www.docker.com/sites/default/files/WP_Modern%20App%20Architecture%20for%20Enterprise%20-%20Jan%202016.pdf)
-* [DockerCon Videos](https://www.docker.com/community/dockercon)
-* [Pluralsight Course from Nigel Poulton](https://www.pluralsight.com/courses/docker-deep-dive)
+- [Docker Documentation](http://docs.docker.com)
+- [Docker White Paper](https://www.docker.com/sites/default/files/WP_Modern%20App%20Architecture%20for%20Enterprise%20-%20Jan%202016.pdf)
+- [DockerCon Videos](https://www.docker.com/community/dockercon)
+- [Pluralsight Course from Nigel Poulton](https://www.pluralsight.com/courses/docker-deep-dive)
