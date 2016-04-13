@@ -77,6 +77,6 @@ In the code above, we are creating a dictionary to store all the movies as a uni
 
 I know what you are thinking, how did Dapper know how to split the result set into 2 objects (```Movie``` and ```Genre```)?
 
-That's the question that I really wanted to share with you all. The Dapper ```Query<>``` extension method as you can see only has 2 parameters, the query and a func which sets up our dictionary of values appropriate. There is also a default parameter called ```splitOn``` (defaulted to ```Id```) which instructs Dapper how to split the result set appropriately so that Dapper knows to map the first split and match it to the first generic type (in this case ```Movie```) and it knows to map the second split to ```Genre```. As the field I want to split on is already called Id I did not have to set this.
+That's the question that I really wanted to share with you all. The Dapper ```Query<>``` extension method as you can see only has 2 parameters, the query and a func which sets up our dictionary of values appropriately. There is also a default parameter called ```splitOn``` (defaulted to ```Id```) which instructs Dapper how to split the result set appropriately so that Dapper knows to map the first split and match it to the first generic type (in this case ```Movie```) and it knows to map the second split to ```Genre```. As the field I want to split on is already called Id I did not have to set this.
 
 Happy mapping!
