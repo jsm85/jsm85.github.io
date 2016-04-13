@@ -8,7 +8,7 @@ tags: 		Dapper
 blogId:     29
 ---
 
-Our current project is using Dapper.Net as a lightweight ORM for data access (for those of you not familiar with [Dapper.Net](http://dapper.net), it's worth checking out for small-medium sized projects). I ran into a scenario where I needed to map a Multi-Join query to a POCO that contained a nested List Property of items. I could have achieved this with 2 queries and using a foreach loop, set the List property to the appropriate items, but I knew I had solved this before in the past using one query. To avoid myself forgetting this again, I decided to write a blog post. Let's consider this scenario:
+Our current project is using Dapper.Net as a lightweight ORM for data access (for those of you not familiar with [Dapper.Net](https://github.com/StackExchange/dapper-dot-net), it's worth checking out for small-medium sized projects). I ran into a scenario where I needed to map a Multi-Join query to a POCO that contained a nested List Property of items. I could have achieved this with 2 queries and using a foreach loop, set the List property to the appropriate items, but I knew I had solved this before in the past using one query. To avoid myself forgetting this again, I decided to write a blog post. Let's consider this scenario:
 
 * We have an entity called ```Movie``` that contains a list of movies - it has 3 fields (```Id```, ```Name``` and ```Year```).
 
