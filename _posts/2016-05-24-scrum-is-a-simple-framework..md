@@ -5,7 +5,7 @@ title:		Scrum is a Simple Framework
 date: 		2016-05-23 11:00:00
 categories: Blog
 tags: 		Scrum
-blogId:     31
+blogId:     32
 ---
 There's been a theme with my last couple of posts, so I thought I'd get another point off of my chest. I really love Scrum because it's a simple framework, maybe I like it so much because I'm a simple person. :) 
 
