@@ -54,11 +54,12 @@ namespace Test.Controllers
 
 Open up Postman and set the following values as seen below (assuming that you are running your application on your localhost and port 5000, otherwise change accordingly):
 
-!()[]
+![FileUpload](/assets/articles/33/FileUpload_Postman.png)
+
 
 Once you've pressed the ```Send``` button in postman, you will see that our filename has been captured in the output as expected.
 
-!()[]
+![Result](/assets/articles/33/FileUpload_Result.png)
 
 Postman is a great tool for testing your REST endpoints and I highly recommend that it should be a part of your tool stack if it's not already.
 
