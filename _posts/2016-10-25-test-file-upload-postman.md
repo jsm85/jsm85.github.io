@@ -1,16 +1,16 @@
 ---
-published: 	false
+published: 	true
 layout: 	post
 title:		Testing File Upload using Postman 
 date: 		2016-10-25 09:00:00
-categories: Blog
-tags: 		Scrum
+categories: Tutorial
+tags: 		REST
 blogId:     33
 ---
 
 Just a quick blog post on testing a file upload controller method with Postman.
 
-For those of you who haven't heard of Postman, and you're a web developer, then I highly recommend that you take a look at it [here](http://postman.com). This tool is great for testing your API endpoints, especially in this cloud first / mobile first world.
+For those of you who haven't heard of Postman, and you're a web developer, then I highly recommend that you take a look at it [here](https://www.getpostman.com). This tool is great for testing your API endpoints, especially in this cloud first / mobile first world.
 
 I recently wrote a File Upload controller methos in WebAPI and needed to test it quickly, so i fired up Postman. Here's a basic controller method I was testing:
 
