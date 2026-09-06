@@ -1,0 +1,18 @@
+{%- assign a = include.piece -%}
+<figure class="art-tile" data-medium="{{ a.medium | default: 'other' | slugify }}">
+  <button class="art-tile__btn"
+          type="button"
+          data-full="{{ a.image | relative_url }}"
+          data-title="{{ a.title | escape }}"
+          data-caption="{{ a.caption | default: '' | escape }}"
+          data-meta="{{ a.medium }}{% if a.year %} · {{ a.year }}{% endif %}">
+    <img src="{{ a.image | relative_url }}"
+         alt="{{ a.alt | default: a.title }}"
+         loading="lazy" decoding="async">
+    <span class="art-tile__scan" aria-hidden="true"></span>
+  </button>
+  <figcaption class="art-tile__cap">
+    <span class="art-tile__title">{{ a.title }}</span>
+    <span class="art-tile__meta">{{ a.medium }}{% if a.year %} · {{ a.year }}{% endif %}</span>
+  </figcaption>
+</figure>

@@ -1,0 +1,12 @@
+# The "character card" on the home + about pages.
+# Values are 1-100. Edit freely — nothing else depends on these.
+- label: Backend
+  value: 90
+- label: Cloud & DevOps
+  value: 78
+- label: Data & SQL
+  value: 82
+- label: Frontend
+  value: 65
+- label: Pixel pushing
+  value: 70

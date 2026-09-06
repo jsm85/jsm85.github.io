@@ -1,30 +1,60 @@
 ---
-layout: default
+layout: base
 ---
+<article class="post">
+  <div class="page-head page-head--post">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow">
+        <a href="{{ '/blog/' | relative_url }}">Project log</a>
+        <span aria-hidden="true">/</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+      </p>
 
-<div class="post padding-fix card">
-	<h2>{{ page.title }}</h2>
+      <h1 class="display">{{ page.title }}</h1>
 
-	<div>
-		<p class="meta">{{ page.date | date_to_string }}</p>
+      {%- if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
 
-		{% for category in page.categories %}
-		<span class="label label-primary">{{ category | capitalize }}</span>
-		{% endfor %}
+      <ul class="post__meta">
+        <li>{% include icon.html name="arrow" %}{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</li>
+        {%- if page.tags and page.tags.size > 0 %}
+        {%- for t in page.tags %}<li class="tag">{{ t }}</li>{% endfor -%}
+        {%- endif %}
+      </ul>
+    </div>
+  </div>
 
-		{% for tag in page.tags %}
-		<span class="label label-success">{{ tag | capitalize }}</span>
-		{% endfor %}
+  {%- if page.hero %}
+  <div class="wrap">
+    <div class="post__hero panel">
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+    </div>
+  </div>
+  {%- endif %}
 
-	</div>
+  <div class="wrap wrap--narrow prose">
+    {{ content }}
+  </div>
 
-</br>
+  <div class="wrap wrap--narrow">
+    <div class="stage-clear">
+      <p class="stage-clear__title">Stage clear</p>
+      <p class="stage-clear__body">
+        Thanks for reading. Say hello on
+        <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>.
+      </p>
+    </div>
 
-<div>
-	{{ content }}
-</div>
-</div>
-
-
-
-
+    <nav class="post-nav" aria-label="More posts">
+      {%- if page.previous %}
+      <a class="post-nav__link post-nav__link--prev" href="{{ page.previous.url | relative_url }}">
+        <span>Previous</span><strong>{{ page.previous.title }}</strong>
+      </a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="post-nav__link post-nav__link--next" href="{{ page.next.url | relative_url }}">
+        <span>Next</span><strong>{{ page.next.title }}</strong>
+      </a>
+      {%- endif %}
+    </nav>
+  </div>
+</article>

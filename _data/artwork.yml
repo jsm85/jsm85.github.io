@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────
+#  The art gallery.
+#
+#  Drop an image into assets/images/art/ then add an entry here.
+#  `medium` doubles as the filter button label on /art/.
+#
+#  - title:   Piece name
+#    image:   /assets/images/art/your-file.png
+#    alt:     Description for screen readers
+#    medium:  Ink            # Ink | Digital | Pixel | Sketch | ...
+#    year:    2026
+#    caption: Optional line shown in the lightbox.
+# ─────────────────────────────────────────────────────────────
+
+- title: The First Avenger
+  image: /assets/images/profile.jpg
+  alt: Cartoon drawing of Captain America standing with his shield behind him
+  medium: Digital
+  year: 2015
+  caption: The one that's been my avatar for a decade.

@@ -1,0 +1,26 @@
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <p class="site-foot__credit">
+      <span class="blink" aria-hidden="true">_</span>
+      &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }} — 1 credit remaining
+    </p>
+
+    <ul class="site-foot__links">
+      {%- for link in site.social %}
+      <li>
+        <a href="{{ link.url }}" rel="me noopener" target="_blank">
+          {% include icon.html name=link.icon %}{{ link.name }}
+        </a>
+      </li>
+      {%- endfor %}
+      <li>
+        <a href="{{ '/feed.xml' | relative_url }}">{% include icon.html name="rss" %}RSS</a>
+      </li>
+    </ul>
+
+    <p class="site-foot__built">
+      Built with <a href="https://jekyllrb.com">Jekyll</a> ·
+      <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io">Source</a>
+    </p>
+  </div>
+</footer>

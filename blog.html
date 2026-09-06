@@ -1,0 +1,45 @@
+---
+layout: base
+title: Project log
+nav: blog
+permalink: /blog/
+description: Write-ups on the things I build — occasional, but honest.
+pagination:
+  enabled: true
+---
+
+<div class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Level select</p>
+    <h1 class="display">Project log</h1>
+    <p class="lede">
+      Every so often I finish something worth writing down. This is where it lands.
+    </p>
+  </div>
+</div>
+
+<div class="wrap section">
+  {%- assign items = paginator.posts | default: site.posts %}
+  {%- if items.size > 0 %}
+  <div class="card-grid">
+    {%- for post in items %}
+      {% include post-card.html post=post %}
+    {%- endfor %}
+  </div>
+
+  {%- if paginator and paginator.total_pages > 1 %}
+  <nav class="pager" aria-label="Pagination">
+    {%- if paginator.previous_page %}
+      <a class="btn btn--ghost" href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
+    {%- endif %}
+    <span class="pager__count">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+    {%- if paginator.next_page %}
+      <a class="btn btn--ghost" href="{{ paginator.next_page_path | relative_url }}">Next</a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+
+  {%- else %}
+  <p class="empty">No entries yet — check back soon.</p>
+  {%- endif %}
+</div>

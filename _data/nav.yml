@@ -1,0 +1,12 @@
+- key: home
+  title: Home
+  url: /
+- key: blog
+  title: Projects
+  url: /blog/
+- key: art
+  title: Art
+  url: /art/
+- key: about
+  title: About
+  url: /about/

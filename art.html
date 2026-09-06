@@ -1,0 +1,63 @@
+---
+layout: base
+title: Art
+nav: art
+permalink: /art/
+description: A gallery of drawings, comics and pixel art by Joe Mendonca.
+---
+
+<div class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Bonus stage</p>
+    <h1 class="display">The gallery</h1>
+    <p class="lede">
+      Drawing is the hobby that survived every other hobby. Here's some of it.
+    </p>
+  </div>
+</div>
+
+<div class="wrap section">
+  {%- assign pieces = site.data.artwork %}
+  {%- if pieces.size > 0 %}
+
+  {%- assign mediums = pieces | map: "medium" | compact | uniq | sort %}
+  {%- if mediums.size > 1 %}
+  <div class="filters" role="group" aria-label="Filter artwork by medium">
+    <button class="chip is-active" type="button" data-filter="all">All</button>
+    {%- for m in mediums %}
+    <button class="chip" type="button" data-filter="{{ m | slugify }}">{{ m }}</button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  <div class="art-grid" id="art-grid">
+    {%- for piece in pieces %}
+      {% include art-tile.html piece=piece %}
+    {%- endfor %}
+  </div>
+
+  {%- else %}
+  <div class="arcade-empty">
+    <p class="arcade-empty__title">Gallery loading</p>
+    <p class="arcade-empty__body">
+      Nothing hung on the walls yet. Add images to
+      <code>assets/images/art/</code> and list them in <code>_data/artwork.yml</code>.
+    </p>
+  </div>
+  {%- endif %}
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous">&#8249;</button>
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next">&#8250;</button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" src="" alt="">
+    <figcaption class="lightbox__cap">
+      <strong class="lightbox__title"></strong>
+      <span class="lightbox__meta"></span>
+      <span class="lightbox__caption"></span>
+    </figcaption>
+  </figure>
+</div>

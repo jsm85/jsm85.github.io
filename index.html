@@ -1,24 +1,149 @@
 ---
-layout: default
-title: Index
+layout: base
+title: Home
+nav: home
+description: Joe Mendonca — developer in London. Project write-ups and a gallery of hand-drawn artwork.
+body_class: home
 ---
 
-{% for post in site.posts limit:5 %}
-<div class="card">
-    <!-- <img src="/assets/blog.jpg" class="about-me-img"/> -->
-    <div style="margin-bottom:30px;">
-	    	<h1>{{ post.title }}</h1>
-	    	<p>{{ post.excerpt }}</p>
-    	
-</div>
-	<div class="panel-footer">
-	<a href="{{ post.url }}"><button class="btn btn-fab btn-raised btn-primary button-offset"><i class="mdi-navigation-arrow-forward"></i></button></a>
-    	
-<i>Posted on {{ post.date | date_to_string }}</i>
-   		
-	</div>
-</div>
-{% endfor %}
+<!-- ── HERO / ATTRACT MODE ─────────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__sun" aria-hidden="true"></div>
 
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--blink">Insert coin</p>
 
+      <h1 id="hero-title" class="display display--xl">
+        <span class="display__line">{{ site.author.name }}</span>
+      </h1>
 
+      <p class="hero__role" data-typewriter
+         data-words="Software developer|Comic scribbler|Retro game hoarder|London based">
+        Software developer
+      </p>
+
+      <p class="hero__blurb">{{ site.author.blurb }}</p>
+
+      <div class="btn-row">
+        <a class="btn btn--primary" href="{{ '/blog/' | relative_url }}">
+          Press start
+        </a>
+        <a class="btn" href="{{ '/art/' | relative_url }}">View the art</a>
+        <a class="btn btn--ghost"
+           href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
+           target="_blank" rel="me noopener">
+          {% include icon.html name="linkedin" %}LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Character select card -->
+    <div class="hero__card">
+      <div class="charcard">
+        <div class="charcard__frame">
+          <span class="charcard__halftone" aria-hidden="true"></span>
+          <img class="charcard__img"
+               src="{{ '/assets/images/profile.jpg' | relative_url }}"
+               alt="Cartoon drawing of Captain America — Joe's avatar"
+               width="460" height="460">
+          <span class="charcard__burst" aria-hidden="true">POW!</span>
+        </div>
+
+        <div class="charcard__body">
+          <p class="charcard__name">Player One</p>
+          <ul class="statbars">
+            {%- for s in site.data.stats %}
+            <li class="statbar">
+              <span class="statbar__label">{{ s.label }}</span>
+              <span class="statbar__track">
+                <span class="statbar__fill" style="--v: {{ s.value }}%"></span>
+              </span>
+            </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>★ C# ★ .NET ★ Docker ★ Azure ★ SQL ★ Ruby ★ Comics ★ Pixel art ★ 16-bit ★ Arcade ★</span>
+      <span>★ C# ★ .NET ★ Docker ★ Azure ★ SQL ★ Ruby ★ Comics ★ Pixel art ★ 16-bit ★ Arcade ★</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── LATEST LOGS ──────────────────────────────────────────── -->
+<section class="section" aria-labelledby="logs-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="logs-title" class="display">Project log</h2>
+      <p class="section__note">
+        Not a blog exactly — just notes on whatever I'm building at the time.
+      </p>
+      <a class="link-more" href="{{ '/blog/' | relative_url }}">
+        All entries {% include icon.html name="arrow" %}
+      </a>
+    </div>
+
+    {%- assign recent = site.posts | slice: 0, 3 %}
+    {%- if recent.size > 0 %}
+    <div class="card-grid card-grid--fit">
+      {%- for post in recent %}
+        {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="empty">No entries yet. First one's loading…</p>
+    {%- endif %}
+  </div>
+</section>
+
+<!-- ── ART PREVIEW ──────────────────────────────────────────── -->
+<section class="section section--alt" aria-labelledby="art-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="art-title" class="display">The gallery</h2>
+      <p class="section__note">Pens, tablets and far too many layers.</p>
+      <a class="link-more" href="{{ '/art/' | relative_url }}">
+        Full gallery {% include icon.html name="arrow" %}
+      </a>
+    </div>
+
+    {%- assign preview = site.data.artwork | slice: 0, 4 %}
+    {%- if preview.size > 0 %}
+    <div class="art-grid art-grid--preview">
+      {%- for piece in preview %}
+        {% include art-tile.html piece=piece %}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="empty">Gallery loading…</p>
+    {%- endif %}
+  </div>
+</section>
+
+<!-- ── CONTACT ──────────────────────────────────────────────── -->
+<section class="section section--cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-panel">
+      <h2 id="cta-title" class="display">Continue?</h2>
+      <p>
+        I'm always up for talking shop — software, comics, or which console
+        had the better launch line-up.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--primary"
+           href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
+           target="_blank" rel="me noopener">
+          {% include icon.html name="linkedin" %}Connect on LinkedIn
+        </a>
+        <a class="btn btn--ghost" href="{{ '/about/' | relative_url }}">About me</a>
+      </div>
+      <p class="cta-panel__timer" aria-hidden="true">10 · 9 · 8 …</p>
+    </div>
+  </div>
+</section>
