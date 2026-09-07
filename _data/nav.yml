@@ -1,9 +1,6 @@
-- key: home
-  title: Home
-  url: /
-- key: blog
-  title: Projects
-  url: /blog/
+- key: work
+  title: Work
+  url: /work/
 - key: art
   title: Art
   url: /art/

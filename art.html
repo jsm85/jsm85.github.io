@@ -3,20 +3,14 @@ layout: base
 title: Art
 nav: art
 permalink: /art/
-description: A gallery of drawings, comics and pixel art by Joe Mendonca.
+description: A gallery of drawings, comics and pixel art.
+subtitle: >-
+  Comics and games are the hobbies that stuck, and drawing is where they meet.
 ---
 
-<div class="page-head">
-  <div class="wrap">
-    <p class="eyebrow">Bonus stage</p>
-    <h1 class="display">The gallery</h1>
-    <p class="lede">
-      Drawing is the hobby that survived every other hobby. Here's some of it.
-    </p>
-  </div>
-</div>
+{% include page-head.html index="02" label="Art" %}
 
-<div class="wrap section">
+<div class="wrap wrap--wide section">
   {%- assign pieces = site.data.artwork %}
   {%- if pieces.size > 0 %}
 
@@ -37,11 +31,11 @@ description: A gallery of drawings, comics and pixel art by Joe Mendonca.
   </div>
 
   {%- else %}
-  <div class="arcade-empty">
-    <p class="arcade-empty__title">Gallery loading</p>
-    <p class="arcade-empty__body">
-      Nothing hung on the walls yet. Add images to
-      <code>assets/images/art/</code> and list them in <code>_data/artwork.yml</code>.
+  <div class="note">
+    <p><strong>Nothing hung yet.</strong></p>
+    <p>
+      Add images to <code>assets/images/art/</code> and list them in
+      <code>_data/artwork.yml</code>.
     </p>
   </div>
   {%- endif %}
@@ -55,7 +49,7 @@ description: A gallery of drawings, comics and pixel art by Joe Mendonca.
   <figure class="lightbox__figure">
     <img class="lightbox__img" src="" alt="">
     <figcaption class="lightbox__cap">
-      <strong class="lightbox__title"></strong>
+      <span class="lightbox__title"></span>
       <span class="lightbox__meta"></span>
       <span class="lightbox__caption"></span>
     </figcaption>

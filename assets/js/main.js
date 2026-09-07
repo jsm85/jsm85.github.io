@@ -1,9 +1,7 @@
-/* jsm85.github.io — nav, typewriter, art filters, lightbox.
+/* jsm85.github.io — mobile nav, art filters, lightbox.
    No dependencies. Everything degrades to working HTML without it. */
 (function () {
   "use strict";
-
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ── Mobile nav ─────────────────────────────────────── */
   var toggle = document.querySelector(".nav-toggle");
@@ -21,40 +19,6 @@
         toggle.setAttribute("aria-expanded", "false");
       }
     });
-  }
-
-  /* ── Hero typewriter ────────────────────────────────── */
-  var tw = document.querySelector("[data-typewriter]");
-
-  if (tw && !reduced) {
-    var words = (tw.getAttribute("data-words") || "").split("|").filter(Boolean);
-
-    if (words.length) {
-      var wordIndex = 0;
-      var charIndex = words[0].length;
-      var deleting = false;
-
-      var tick = function () {
-        var word = words[wordIndex];
-        charIndex += deleting ? -1 : 1;
-        tw.textContent = word.slice(0, charIndex);
-
-        var delay = deleting ? 45 : 85;
-
-        if (!deleting && charIndex === word.length) {
-          deleting = true;
-          delay = 1900;
-        } else if (deleting && charIndex === 0) {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-          delay = 350;
-        }
-
-        window.setTimeout(tick, delay);
-      };
-
-      window.setTimeout(tick, 1900);
-    }
   }
 
   /* ── Art filters ────────────────────────────────────── */

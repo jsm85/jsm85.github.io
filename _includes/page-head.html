@@ -1,0 +1,10 @@
+<header class="page-head">
+  <div class="wrap wrap--wide">
+    <p class="label">
+      <span class="label__index">{{ include.index }}</span>{{ include.label }}
+    </p>
+    <h1 class="h1">{{ include.title | default: page.title }}</h1>
+    {%- assign sub = include.subtitle | default: page.subtitle %}
+    {%- if sub %}<p class="lede">{{ sub }}</p>{% endif %}
+  </div>
+</header>

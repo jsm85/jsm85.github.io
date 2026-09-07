@@ -1,26 +1,21 @@
 <footer class="site-foot">
-  <div class="site-foot__inner">
-    <p class="site-foot__credit">
-      <span class="blink" aria-hidden="true">_</span>
-      &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }} — 1 credit remaining
-    </p>
+  <div class="wrap wrap--wide site-foot__inner">
+    <p class="site-foot__brand">{{ site.title }}</p>
 
     <ul class="site-foot__links">
       {%- for link in site.social %}
       <li>
         <a href="{{ link.url }}" rel="me noopener" target="_blank">
-          {% include icon.html name=link.icon %}{{ link.name }}
+          {{ link.name }}<span class="nav-out__mark" aria-hidden="true">↗</span>
         </a>
       </li>
       {%- endfor %}
-      <li>
-        <a href="{{ '/feed.xml' | relative_url }}">{% include icon.html name="rss" %}RSS</a>
-      </li>
+      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
     </ul>
 
-    <p class="site-foot__built">
-      Built with <a href="https://jekyllrb.com">Jekyll</a> ·
-      <a href="https://github.com/{{ site.author.github }}/{{ site.author.github }}.github.io">Source</a>
+    <p class="site-foot__colophon">
+      &copy; {{ 'now' | date: "%Y" }} · Built with
+      <a href="https://jekyllrb.com">Jekyll</a>
     </p>
   </div>
 </footer>

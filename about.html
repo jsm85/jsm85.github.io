@@ -3,108 +3,80 @@ layout: base
 title: About
 nav: about
 permalink: /about/
-description: A bit about Joe Mendonca — developer, comic reader, lifelong gamer.
+description: A developer in London who builds software and draws in the gaps.
 ---
 
-<div class="page-head">
-  <div class="wrap">
-    <p class="eyebrow">Player profile</p>
-    <h1 class="display">About me</h1>
-  </div>
-</div>
+{% include page-head.html index="03" label="About" %}
 
-<div class="wrap section about-layout">
+<div class="wrap wrap--wide section about">
 
-  <div class="about-main prose">
+  <div class="about__main prose">
     <p class="prose__lede">
-      Hello — I'm Joe. I write software for a living and draw for fun, and I've
-      never quite managed to keep the two apart.
+      I'm a software developer based in London. I've spent most of my working
+      life on the back end — services, data, and the unglamorous plumbing that
+      keeps other people's software upright.
     </p>
 
     <p>
-      I'm a developer based in London. Most of my working life has been spent
-      on the back end: services, data, and the unglamorous plumbing that keeps
-      other people's software upright. I like problems that look boring from the
-      outside and turn out to have a genuinely interesting shape once you're in
-      them.
+      I like problems that look dull from the outside and turn out to have a
+      genuinely interesting shape once you're inside them. Most of what I write
+      here comes out of that: a technique worth remembering, a side project that
+      took an unexpected turn, or a decision I want to be able to explain to
+      myself later.
+    </p>
+
+    <h2>What's here</h2>
+
+    <p>
+      This isn't a blog in the usual sense. I don't post on a schedule and I've
+      no interest in pretending otherwise. When I build something I'm pleased
+      with, it goes in <a href="{{ '/work/' | relative_url }}">Work</a> — what
+      I made, why, and what I'd do differently.
     </p>
 
     <p>
-      I was born in the 80s, which explains a fair amount about this website.
-      My first machines beeped and loaded from tape, my first heroes came in
-      floppy paper issues, and I still think a good sprite sheet is a work of
-      art. The neon and the halftone dots up there aren't ironic — that's
-      genuinely the decade my taste got stuck in.
-    </p>
-
-    <h2>What you'll find here</h2>
-
-    <p>
-      This isn't really a blog. I don't post on a schedule and I've no interest
-      in pretending otherwise. Instead, when I build something I'm pleased with,
-      I write it up in the
-      <a href="{{ '/blog/' | relative_url }}">project log</a> — what I made, why,
-      and what I'd do differently. Sometimes that's a side project, sometimes
-      it's a technique I want to remember.
-    </p>
-
-    <p>
-      The other half of the site is the
-      <a href="{{ '/art/' | relative_url }}">gallery</a>. Comics and video games
-      are my two long-running hobbies, and drawing is where they meet. Ink,
-      digital, the occasional pixel piece — it all ends up in there.
+      The other half of the site is the <a href="{{ '/art/' | relative_url }}">gallery</a>.
+      Comics and video games are the two hobbies that have outlasted all the
+      others, and drawing is where they meet. Ink, digital, the occasional pixel
+      piece — it all ends up in there.
     </p>
 
     <h2>Elsewhere</h2>
 
     <p>
-      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="me noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
       is the only social account I keep up with, so that's the best place to
-      reach me. My code lives on
-      <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="me noopener">GitHub</a>.
+      reach me. Code lives on
+      <a href="https://github.com/{{ site.author.github }}" rel="me noopener" target="_blank">GitHub</a>.
     </p>
-
-    <div class="btn-row">
-      <a class="btn btn--primary"
-         href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
-         target="_blank" rel="me noopener">
-        {% include icon.html name="linkedin" %}Connect on LinkedIn
-      </a>
-    </div>
   </div>
 
-  <aside class="about-side">
-    <div class="charcard charcard--side">
-      <div class="charcard__frame">
-        <span class="charcard__halftone" aria-hidden="true"></span>
-        <img class="charcard__img"
-             src="{{ '/assets/images/profile.jpg' | relative_url }}"
-             alt="Cartoon drawing of Captain America — Joe's avatar"
-             width="460" height="460">
-      </div>
-      <div class="charcard__body">
-        <p class="charcard__name">{{ site.author.name }}</p>
-        <ul class="statbars">
-          {%- for s in site.data.stats %}
-          <li class="statbar">
-            <span class="statbar__label">{{ s.label }}</span>
-            <span class="statbar__track">
-              <span class="statbar__fill" style="--v: {{ s.value }}%"></span>
-            </span>
-          </li>
-          {%- endfor %}
-        </ul>
-      </div>
+  <aside class="about__side">
+    <figure class="about__portrait">
+      <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+           alt="Cartoon drawing used as my avatar" width="460" height="460">
+    </figure>
+
+    <div class="note">
+      <p class="label">Working with</p>
+      <ul class="plain-list">
+        {%- for item in site.data.toolkit %}
+        <li>{{ item }}</li>
+        {%- endfor %}
+      </ul>
     </div>
 
-    <div class="panel panel--facts">
-      <h2 class="panel__title">Loadout</h2>
-      <dl class="facts">
-        <div><dt>Based</dt><dd>London, UK</dd></div>
-        <div><dt>Day job</dt><dd>Software development</dd></div>
-        <div><dt>Hobbies</dt><dd>Comics, video games, drawing</dd></div>
-        <div><dt>Era</dt><dd>80s / 90s, permanently</dd></div>
-      </dl>
+    <div class="note">
+      <p class="label">Elsewhere</p>
+      <ul class="plain-list">
+        {%- for link in site.social %}
+        <li>
+          <a href="{{ link.url }}" rel="me noopener" target="_blank">
+            {{ link.name }}<span class="nav-out__mark" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
     </div>
   </aside>
 </div>

@@ -2,148 +2,98 @@
 layout: base
 title: Home
 nav: home
-description: Joe Mendonca — developer in London. Project write-ups and a gallery of hand-drawn artwork.
+description: Write-ups on the software I build, and a gallery of the artwork I make when I'm not building it.
 body_class: home
 ---
 
-<!-- ── HERO / ATTRACT MODE ─────────────────────────────────── -->
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero__grid" aria-hidden="true"></div>
-  <div class="hero__sun" aria-hidden="true"></div>
+<!-- ── Intro ───────────────────────────────────────────────── -->
+<section class="intro">
+  <div class="wrap wrap--wide intro__inner">
+    <div class="intro__copy">
+      <p class="label"><span class="label__index">00</span>Developer · London</p>
 
-  <div class="wrap hero__inner">
-    <div class="hero__copy">
-      <p class="eyebrow eyebrow--blink">Insert coin</p>
+      <h1 class="h1 h1--lead">{{ site.author.blurb }}</h1>
 
-      <h1 id="hero-title" class="display display--xl">
-        <span class="display__line">{{ site.author.name }}</span>
-      </h1>
-
-      <p class="hero__role" data-typewriter
-         data-words="Software developer|Comic scribbler|Retro game hoarder|London based">
-        Software developer
+      <p class="lede">
+        This is where the two end up. Write-ups on the things I build, and a
+        gallery of the drawings I make when I'm not building them.
       </p>
 
-      <p class="hero__blurb">{{ site.author.blurb }}</p>
-
       <div class="btn-row">
-        <a class="btn btn--primary" href="{{ '/blog/' | relative_url }}">
-          Press start
-        </a>
-        <a class="btn" href="{{ '/art/' | relative_url }}">View the art</a>
-        <a class="btn btn--ghost"
-           href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
-           target="_blank" rel="me noopener">
-          {% include icon.html name="linkedin" %}LinkedIn
+        <a class="btn btn--primary" href="{{ '/work/' | relative_url }}">Read the work</a>
+        <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
+           rel="me noopener" target="_blank">
+          LinkedIn<span class="nav-out__mark" aria-hidden="true">↗</span>
         </a>
       </div>
     </div>
 
-    <!-- Character select card -->
-    <div class="hero__card">
-      <div class="charcard">
-        <div class="charcard__frame">
-          <span class="charcard__halftone" aria-hidden="true"></span>
-          <img class="charcard__img"
-               src="{{ '/assets/images/profile.jpg' | relative_url }}"
-               alt="Cartoon drawing of Captain America — Joe's avatar"
-               width="460" height="460">
-          <span class="charcard__burst" aria-hidden="true">POW!</span>
-        </div>
-
-        <div class="charcard__body">
-          <p class="charcard__name">Player One</p>
-          <ul class="statbars">
-            {%- for s in site.data.stats %}
-            <li class="statbar">
-              <span class="statbar__label">{{ s.label }}</span>
-              <span class="statbar__track">
-                <span class="statbar__fill" style="--v: {{ s.value }}%"></span>
-              </span>
-            </li>
-            {%- endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>★ C# ★ .NET ★ Docker ★ Azure ★ SQL ★ Ruby ★ Comics ★ Pixel art ★ 16-bit ★ Arcade ★</span>
-      <span>★ C# ★ .NET ★ Docker ★ Azure ★ SQL ★ Ruby ★ Comics ★ Pixel art ★ 16-bit ★ Arcade ★</span>
+    <div class="intro__portrait">
+      <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+           alt="Cartoon drawing used as my avatar" width="460" height="460">
     </div>
   </div>
 </section>
 
-<!-- ── LATEST LOGS ──────────────────────────────────────────── -->
-<section class="section" aria-labelledby="logs-title">
-  <div class="wrap">
+<!-- ── Recent work ─────────────────────────────────────────── -->
+<section class="section" aria-labelledby="work-title">
+  <div class="wrap wrap--wide">
     <div class="section__head">
-      <h2 id="logs-title" class="display">Project log</h2>
-      <p class="section__note">
-        Not a blog exactly — just notes on whatever I'm building at the time.
-      </p>
-      <a class="link-more" href="{{ '/blog/' | relative_url }}">
-        All entries {% include icon.html name="arrow" %}
-      </a>
+      <p class="label"><span class="label__index">01</span>Work</p>
+      <h2 id="work-title" class="h2">Recent write-ups</h2>
+      <a class="link-more" href="{{ '/work/' | relative_url }}">All entries →</a>
     </div>
 
-    {%- assign recent = site.posts | slice: 0, 3 %}
+    {%- assign recent = site.posts | slice: 0, 4 %}
     {%- if recent.size > 0 %}
-    <div class="card-grid card-grid--fit">
+    <ol class="entry-list">
       {%- for post in recent %}
-        {% include post-card.html post=post %}
+        {% include entry-row.html post=post %}
       {%- endfor %}
-    </div>
+    </ol>
     {%- else %}
-    <p class="empty">No entries yet. First one's loading…</p>
+    <p class="empty">Nothing published yet.</p>
     {%- endif %}
   </div>
 </section>
 
-<!-- ── ART PREVIEW ──────────────────────────────────────────── -->
+<!-- ── Art ─────────────────────────────────────────────────── -->
 <section class="section section--alt" aria-labelledby="art-title">
-  <div class="wrap">
+  <div class="wrap wrap--wide">
     <div class="section__head">
-      <h2 id="art-title" class="display">The gallery</h2>
-      <p class="section__note">Pens, tablets and far too many layers.</p>
-      <a class="link-more" href="{{ '/art/' | relative_url }}">
-        Full gallery {% include icon.html name="arrow" %}
-      </a>
+      <p class="label"><span class="label__index">02</span>Art</p>
+      <h2 id="art-title" class="h2">From the gallery</h2>
+      <a class="link-more" href="{{ '/art/' | relative_url }}">Full gallery →</a>
     </div>
 
-    {%- assign preview = site.data.artwork | slice: 0, 4 %}
+    {%- assign preview = site.data.artwork | slice: 0, 3 %}
     {%- if preview.size > 0 %}
-    <div class="art-grid art-grid--preview">
+    <div class="art-grid">
       {%- for piece in preview %}
         {% include art-tile.html piece=piece %}
       {%- endfor %}
     </div>
     {%- else %}
-    <p class="empty">Gallery loading…</p>
+    <p class="empty">Nothing hung yet.</p>
     {%- endif %}
   </div>
 </section>
 
-<!-- ── CONTACT ──────────────────────────────────────────────── -->
-<section class="section section--cta" aria-labelledby="cta-title">
-  <div class="wrap">
-    <div class="cta-panel">
-      <h2 id="cta-title" class="display">Continue?</h2>
-      <p>
-        I'm always up for talking shop — software, comics, or which console
-        had the better launch line-up.
-      </p>
-      <div class="btn-row">
-        <a class="btn btn--primary"
-           href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
-           target="_blank" rel="me noopener">
-          {% include icon.html name="linkedin" %}Connect on LinkedIn
-        </a>
-        <a class="btn btn--ghost" href="{{ '/about/' | relative_url }}">About me</a>
-      </div>
-      <p class="cta-panel__timer" aria-hidden="true">10 · 9 · 8 …</p>
+<!-- ── Contact ─────────────────────────────────────────────── -->
+<section class="section section--contact" aria-labelledby="contact-title">
+  <div class="wrap wrap--wide">
+    <p class="label"><span class="label__index">03</span>Contact</p>
+    <h2 id="contact-title" class="h2">Get in touch</h2>
+    <p class="lede">
+      LinkedIn is the only social account I keep up with, so it's the surest
+      way to reach me.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--primary"
+         href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
+         rel="me noopener" target="_blank">
+        Connect on LinkedIn<span class="nav-out__mark" aria-hidden="true">↗</span>
+      </a>
     </div>
   </div>
 </section>

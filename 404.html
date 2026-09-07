@@ -1,18 +1,19 @@
 ---
 layout: base
-title: Game over
+title: Page not found
 permalink: /404.html
 sitemap: false
 ---
 
-<section class="gameover">
-  <div class="wrap">
-    <p class="gameover__code">404</p>
-    <h1 class="display display--xl">Game over</h1>
-    <p class="lede">That page isn't on this cartridge.</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="{{ '/' | relative_url }}">Continue</a>
-      <a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">Project log</a>
-    </div>
+<div class="wrap wrap--prose notfound">
+  <p class="label"><span class="label__index">404</span>Not found</p>
+  <h1 class="h1">This page doesn't exist</h1>
+  <p class="lede">
+    The link may be out of date, or the page may have been part of the old
+    version of this site.
+  </p>
+  <div class="btn-row">
+    <a class="btn btn--primary" href="{{ '/' | relative_url }}">Back home</a>
+    <a class="btn" href="{{ '/work/' | relative_url }}">Work</a>
   </div>
-</section>
+</div>

@@ -1,8 +1,13 @@
 # jsm85.github.io
 
-Personal site for Joe Mendonca — project write-ups and an art gallery.
-Built with [Jekyll 4](https://jekyllrb.com) and deployed to GitHub Pages by
-GitHub Actions.
+Personal site — project write-ups and an art gallery. Built with
+[Jekyll 4](https://jekyllrb.com) and deployed to GitHub Pages by GitHub
+Actions.
+
+Dark charcoal, one warm accent, generous whitespace. The 80s/90s nod is
+deliberately quiet — monospace labels with index numbers, a faint grid behind
+the intro, and an amber-CRT accent colour. Nothing glows, nothing animates on
+its own.
 
 ---
 
@@ -31,7 +36,7 @@ bundle exec jekyll serve --livereload
 
 ---
 
-## Adding a project write-up
+## Adding a write-up
 
 Create a file in `_posts/` named `YYYY-MM-DD-some-slug.md`:
 
@@ -39,9 +44,8 @@ Create a file in `_posts/` named `YYYY-MM-DD-some-slug.md`:
 ---
 title: "What I built"
 date: 2026-01-15 09:00:00 +0000
-category: project          # shown as the badge on the card
 tags: [dotnet, docker]
-description: One line used on the card and in search results.
+description: One line, used on the Work list and in search results.
 hero: /assets/images/posts/my-screenshot.png   # optional
 ---
 
@@ -52,7 +56,8 @@ Opening paragraph — this shows above the fold.
 The rest of the post.
 ```
 
-Everything but `title` and `date` is optional.
+Everything but `title` and `date` is optional. Posts appear at
+`/work/YYYY/MM/slug/`.
 
 ## Adding artwork
 
@@ -74,12 +79,22 @@ The filter bar appears automatically once there's more than one `medium`.
 
 | What | Where |
 | --- | --- |
-| Site title, description, links | `_config.yml` |
+| Site title, blurb, links | `_config.yml` |
 | Nav items | `_data/nav.yml` |
-| The stat bars on the character card | `_data/stats.yml` |
+| The "Working with" list on About | `_data/toolkit.yml` |
 | Colours, fonts, spacing | the token block at the top of `assets/css/style.css` |
 | Bio copy | `about.html` |
+| Intro headline | `author.blurb` in `_config.yml` |
 | Profile picture | `assets/images/profile.jpg` |
+
+The site is branded as **JSM85** throughout — no real name appears anywhere
+except behind the LinkedIn link.
+
+## Fonts
+
+Space Grotesk and IBM Plex Mono are self-hosted from `assets/fonts/` (latin and
+latin-ext subsets only, ~120 KB total, both SIL Open Font License). Pages make
+no third-party requests.
 
 ---
 

@@ -3,25 +3,24 @@
 #  Jekyll 4.x. Restart `bundle exec jekyll serve` after editing.
 # ─────────────────────────────────────────────────────────────
 
-title: Joe Mendonca
-tagline: Developer · Player One
+title: JSM85
+tagline: Software and drawings
 description: >-
-  Joe Mendonca — software developer in London. Occasional write-ups on the
-  projects I build, plus a gallery of the artwork I draw when I'm not coding.
+  Write-ups on the software I build, and a gallery of the artwork I make
+  when I'm not building it.
 url: https://jsm85.github.io
 baseurl: ""
 lang: en_GB
 timezone: Europe/London
 
 author:
-  name: Joe Mendonca
-  # Short blurb used in the hero + the SEO description.
-  blurb: I build software, draw comics, and grew up with a controller in my hand.
-  email: jsmendonca@gmail.com
+  # Shown as the site byline. Deliberately the handle, not a name.
+  name: JSM85
+  blurb: I build software. In the gaps, I draw.
   github: jsm85
   linkedin: jsm85
 
-# Links rendered in the nav / footer. Add or remove freely.
+# Links rendered in the footer. Add or remove freely.
 social:
   - name: LinkedIn
     url: https://www.linkedin.com/in/jsm85
@@ -33,7 +32,7 @@ social:
 # ── Build ────────────────────────────────────────────────────
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:year/:month/:title/
+permalink: /work/:year/:month/:title/
 excerpt_separator: <!--more-->
 
 kramdown:

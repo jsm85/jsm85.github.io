@@ -1,11 +1,9 @@
 The fonts in this directory are used under the SIL Open Font License, v1.1.
 
-  Bangers        — Copyright 2010 The Bangers Project Authors
-                   https://github.com/googlefonts/bangers
-  Press Start 2P — Copyright 2012 The Press Start 2P Project Authors
-                   https://github.com/googlefonts/pressstart2p
   Space Grotesk  — Copyright 2020 The Space Grotesk Project Authors
                    https://github.com/floriankarsten/space-grotesk
+  IBM Plex Mono  — Copyright 2017 IBM Corp.
+                   https://github.com/IBM/plex
 
 The full licence text follows.
 
