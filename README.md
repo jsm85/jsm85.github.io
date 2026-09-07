@@ -4,9 +4,9 @@ Personal site — project write-ups and an art gallery. Built with
 [Jekyll 4](https://jekyllrb.com) and deployed to GitHub Pages by GitHub
 Actions.
 
-Dark charcoal, one warm accent, generous whitespace. The 80s/90s nod is
+Dark charcoal, one dusty-rose accent, generous whitespace. The 80s/90s nod is
 deliberately quiet — monospace labels with index numbers, a faint grid behind
-the intro, and an amber-CRT accent colour. Nothing glows, nothing animates on
+the intro, and a single soft accent colour. Nothing glows, nothing animates on
 its own.
 
 ---
@@ -82,13 +82,31 @@ The filter bar appears automatically once there's more than one `medium`.
 | Site title, blurb, links | `_config.yml` |
 | Nav items | `_data/nav.yml` |
 | The "Working with" list on About | `_data/toolkit.yml` |
-| Colours, fonts, spacing | the token block at the top of `assets/css/style.css` |
+| Colours, fonts, spacing | the token block at the top of `assets/css/style.css` (re-run the contrast audit after) |
 | Bio copy | `about.html` |
 | Intro headline | `author.blurb` in `_config.yml` |
 | Profile picture | `assets/images/profile.jpg` |
 
 The site is branded as **JSM85** throughout — no real name appears anywhere
 except behind the LinkedIn link.
+
+## Accessibility
+
+Colour choices are checked, not assumed:
+
+```bash
+python3 script/contrast-audit.py
+```
+
+It reads the palette tokens straight out of `assets/css/style.css` and checks
+every text/background pair in the design against WCAG 2.1 — including the
+awkward ones, like a label sitting on a grid line behind the intro, or text on
+the lightbox scrim. Change the accent, re-run it, and it'll tell you what
+broke. No dependencies.
+
+Currently 30 pairs, all passing AA, most passing AAA. The build was also run
+through axe-core across every page plus the open lightbox and open mobile menu:
+0 violations.
 
 ## Fonts
 
