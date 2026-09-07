@@ -10,7 +10,7 @@ pagination:
   enabled: true
 ---
 
-{% include page-head.html index="01" label="Work" %}
+{% include page-head.html index="01" label="Work" title="Project" accent="log" %}
 
 <div class="wrap wrap--wide section">
   {%- assign items = paginator.posts | default: site.posts %}

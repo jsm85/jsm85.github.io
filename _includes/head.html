@@ -1,13 +1,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#131418">
+<meta name="theme-color" content="#150b26">
 
 {%- seo -%}
 
+{%- comment -%}All three faces appear above the fold, so preload all three.{%- endcomment -%}
+{%- assign above_fold = "syne-var-latin,space-grotesk-var-latin,ibm-plex-mono-400-latin" | split: "," -%}
+{%- for f in above_fold %}
 <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="{{ '/assets/fonts/space-grotesk-var-latin.woff2' | relative_url }}">
-<link rel="preload" as="font" type="font/woff2" crossorigin
-      href="{{ '/assets/fonts/ibm-plex-mono-400-latin.woff2' | relative_url }}">
+      href="{{ '/assets/fonts/' | append: f | append: '.woff2' | relative_url }}">
+{%- endfor %}
 <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
 
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">

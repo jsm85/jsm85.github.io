@@ -3,7 +3,11 @@
     <p class="label">
       <span class="label__index">{{ include.index }}</span>{{ include.label }}
     </p>
-    <h1 class="h1">{{ include.title | default: page.title }}</h1>
+    <h1 class="h1">
+      {{ include.title | default: page.title }}
+      {%- assign accent = include.accent | default: page.accent %}
+      {%- if accent %}<span class="grad">{{ accent }}</span>{% endif %}
+    </h1>
     {%- assign sub = include.subtitle | default: page.subtitle %}
     {%- if sub %}<p class="lede">{{ sub }}</p>{% endif %}
   </div>

@@ -14,10 +14,33 @@ from pathlib import Path
 
 CSS = Path(__file__).resolve().parent.parent / "assets" / "css" / "style.css"
 
-# Alpha values baked into the design that put text over a blended background.
-GRID_ALPHA     = 0.45   # .intro::before grid lines
-CHIP_ALPHA     = 0.10   # .chip.is-active wash
-LIGHTBOX_ALPHA = 0.94   # .lightbox scrim
+# Translucent layers that put text over a blended background.
+CHIP_WASH = ("#ef8dae", 0.10)   # .chip.is-active
+SCRIM     = ("#0c0518", 0.95)   # .lightbox backdrop
+
+# The intro sits over the sunset glow, whose strength varies by position, so a
+# flat "worst case" model is misleading in both directions. These are the
+# BRIGHTEST pixel actually rendered behind each element, sampled from the live
+# page at 390 / 900 / 1280px wide with the copy hidden. Re-measure after
+# changing the glow, --floor-h, --sky-gap, or the intro layout:
+#
+#   1. bundle exec jekyll serve
+#   2. screenshot / with `.intro__copy { visibility: hidden }`
+#   3. take the max-luminance pixel inside each element's bounding box
+#
+# The glow's mask and the intro's bottom padding are what keep these dark;
+# see the comment on .intro::after in style.css.
+# The body carries a radial that peaks at the very top of every page:
+#   radial-gradient(120% 70% at 50% 0%, #22103c, transparent 62%)
+# Anything in the first screenful sits on this rather than flat --bg.
+PAGE_TOP = "#22103c"
+
+INTRO_BG = {
+    "mono label": "#1f0f36",
+    "headline":   "#1e0f34",
+    "lede":       "#251135",
+    "button":     "#652e5b",
+}
 
 
 def tokens(css):
@@ -26,7 +49,9 @@ def tokens(css):
     if not root:
         sys.exit("could not find :root block in style.css")
     found = dict(re.findall(r"--([\w-]+):\s*(#[0-9a-fA-F]{6})\s*;", root.group(1)))
-    required = {"bg", "surface", "surface-2", "line", "text", "text-2", "text-3", "accent"}
+    required = {"bg", "bg-alt", "surface", "surface-2", "line",
+                "text", "text-2", "text-3", "prose",
+                "cream", "gold", "accent", "violet", "cyan"}
     missing = required - found.keys()
     if missing:
         sys.exit(f"missing colour tokens: {', '.join(sorted(missing))}")
@@ -60,15 +85,13 @@ def over(fg, alpha, bg):
 
 def main():
     t = tokens(CSS.read_text())
-    BG, SURFACE, SURFACE2 = t["bg"], t["surface"], t["surface-2"]
-    TEXT, TEXT2, TEXT3, ACCENT, LINE = t["text"], t["text-2"], t["text-3"], t["accent"], t["line"]
-    ALT   = "#16181e"           # .section--alt band
-    PROSE = "#d5d7dd"           # .prose p / li
+    BG, ALT, SURFACE, SURFACE2 = t["bg"], t["bg-alt"], t["surface"], t["surface-2"]
+    TEXT, TEXT2, TEXT3, PROSE = t["text"], t["text-2"], t["text-3"], t["prose"]
+    ACCENT, CREAM, GOLD, VIOLET, CYAN = (
+        t["accent"], t["cream"], t["gold"], t["violet"], t["cyan"])
 
-    # Worst case for intro copy: text landing directly on a grid line.
-    GRID     = over(LINE, GRID_ALPHA, BG)
-    CHIP_ON  = over(ACCENT, CHIP_ALPHA, BG)
-    LIGHTBOX = over("#0b0c0f", LIGHTBOX_ALPHA, BG)
+    CHIP_ON  = over(CHIP_WASH[0], CHIP_WASH[1], BG)
+    LIGHTBOX = over(SCRIM[0], SCRIM[1], BG)
 
     # (label, foreground, background, minimum ratio)
     # 4.5 = AA normal text, 3.0 = AA large text and non-text (focus rings).
@@ -76,26 +99,43 @@ def main():
         ("body text",                   PROSE,  BG,       4.5),
         ("body text on surface",        PROSE,  SURFACE,  4.5),
         ("headings",                    TEXT,   BG,       3.0),
-        ("heading over intro grid",     TEXT,   GRID,     3.0),
+        ("heading over intro glow",     TEXT,   INTRO_BG["headline"],   3.0),
         ("lede",                        TEXT2,  BG,       4.5),
-        ("lede over intro grid",        TEXT2,  GRID,     4.5),
+        ("lede over intro glow",        TEXT2,  INTRO_BG["lede"],       4.5),
         ("lede on alt band",            TEXT2,  ALT,      4.5),
         ("lede on surface",             TEXT2,  SURFACE,  4.5),
         ("mono label",                  TEXT3,  BG,       4.5),
-        ("mono label over intro grid",  TEXT3,  GRID,     4.5),
+        ("mono label at page top",      TEXT3,  PAGE_TOP, 4.5),
+        ("lede at page top",            TEXT2,  PAGE_TOP, 4.5),
+        ("body text at page top",       PROSE,  PAGE_TOP, 4.5),
+        ("accent at page top",          ACCENT, PAGE_TOP, 4.5),
+        ("heading at page top",         TEXT,   PAGE_TOP, 3.0),
+        ("nav link at page top",        TEXT2,  PAGE_TOP, 4.5),
+        ("mono label over intro glow",  TEXT3,  INTRO_BG["mono label"], 4.5),
         ("mono label on alt band",      TEXT3,  ALT,      4.5),
         ("mono label on surface",       TEXT3,  SURFACE,  4.5),
         ("tag text",                    TEXT3,  SURFACE,  4.5),
         ("accent link",                 ACCENT, BG,       4.5),
-        ("accent over intro grid",      ACCENT, GRID,     4.5),
+        ("accent over intro glow",      ACCENT, INTRO_BG["mono label"], 4.5),
         ("accent on alt band",          ACCENT, ALT,      4.5),
         ("accent on surface",           ACCENT, SURFACE,  4.5),
         ("inline code",                 ACCENT, SURFACE2, 4.5),
         ("active filter chip",          ACCENT, CHIP_ON,  4.5),
-        ("primary button text",         BG,     ACCENT,   4.5),
+        # The primary button is filled with the sunset ramp, so --bg text
+        # must clear every stop along it, not just one.
+        ("button text on cream stop",   BG,     CREAM,    4.5),
+        ("button text on gold stop",    BG,     GOLD,     4.5),
+        ("button text on rose stop",    BG,     ACCENT,   4.5),
+        ("button text on violet stop",  BG,     VIOLET,   4.5),
+        # Gradient headline text: each stop against the page (large text).
+        ("headline cream stop",         CREAM,  BG,       3.0),
+        ("headline gold stop",          GOLD,   BG,       3.0),
+        ("headline rose stop",          ACCENT, BG,       3.0),
+        ("headline violet stop",        VIOLET, BG,       3.0),
+        ("cyan detail",                 CYAN,   BG,       4.5),
         ("skip link text",              BG,     ACCENT,   4.5),
         ("ghost button text",           TEXT,   BG,       4.5),
-        ("ghost button over grid",      TEXT,   GRID,     4.5),
+        ("ghost button over glow",      TEXT,   INTRO_BG["button"],     4.5),
         ("nav link",                    TEXT2,  BG,       4.5),
         ("footer link",                 TEXT2,  BG,       4.5),
         ("lightbox title",              TEXT,   LIGHTBOX, 4.5),

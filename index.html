@@ -8,11 +8,17 @@ body_class: home
 
 <!-- ── Intro ───────────────────────────────────────────────── -->
 <section class="intro">
+  <span class="intro__floor" aria-hidden="true"></span>
+  <span class="intro__horizon" aria-hidden="true"></span>
+
   <div class="wrap wrap--wide intro__inner">
     <div class="intro__copy">
       <p class="label"><span class="label__index">00</span>Developer · London</p>
 
-      <h1 class="h1 h1--lead">{{ site.author.blurb }}</h1>
+      <h1 class="h1 h1--lead">
+        {{ site.author.blurb_lead }}
+        <span class="grad">{{ site.author.blurb_accent }}</span>
+      </h1>
 
       <p class="lede">
         This is where the two end up. Write-ups on the things I build, and a
@@ -40,7 +46,7 @@ body_class: home
   <div class="wrap wrap--wide">
     <div class="section__head">
       <p class="label"><span class="label__index">01</span>Work</p>
-      <h2 id="work-title" class="h2">Recent write-ups</h2>
+      <h2 id="work-title" class="h2">Recent <span class="grad">write-ups</span></h2>
       <a class="link-more" href="{{ '/work/' | relative_url }}">All entries →</a>
     </div>
 
@@ -62,7 +68,7 @@ body_class: home
   <div class="wrap wrap--wide">
     <div class="section__head">
       <p class="label"><span class="label__index">02</span>Art</p>
-      <h2 id="art-title" class="h2">From the gallery</h2>
+      <h2 id="art-title" class="h2">From the <span class="grad">gallery</span></h2>
       <a class="link-more" href="{{ '/art/' | relative_url }}">Full gallery →</a>
     </div>
 
@@ -83,7 +89,7 @@ body_class: home
 <section class="section section--contact" aria-labelledby="contact-title">
   <div class="wrap wrap--wide">
     <p class="label"><span class="label__index">03</span>Contact</p>
-    <h2 id="contact-title" class="h2">Get in touch</h2>
+    <h2 id="contact-title" class="h2">Get in <span class="grad">touch</span></h2>
     <p class="lede">
       LinkedIn is the only social account I keep up with, so it's the surest
       way to reach me.

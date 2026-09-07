@@ -16,7 +16,10 @@ timezone: Europe/London
 author:
   # Shown as the site byline. Deliberately the handle, not a name.
   name: JSM85
-  blurb: I build software. In the gaps, I draw.
+  # The intro headline, split across two lines. The second carries the
+  # sunset gradient — keep it the shorter, punchier half.
+  blurb_lead: I build software.
+  blurb_accent: In the gaps, I draw.
   github: jsm85
   linkedin: jsm85
 

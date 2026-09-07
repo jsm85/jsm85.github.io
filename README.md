@@ -4,10 +4,11 @@ Personal site — project write-ups and an art gallery. Built with
 [Jekyll 4](https://jekyllrb.com) and deployed to GitHub Pages by GitHub
 Actions.
 
-Dark charcoal, one dusty-rose accent, generous whitespace. The 80s/90s nod is
-deliberately quiet — monospace labels with index numbers, a faint grid behind
-the intro, and a single soft accent colour. Nothing glows, nothing animates on
-its own.
+Retro-futurist: a deep plum ground, a sunset horizon under the intro,
+chrome-gradient display type and pill buttons — the outrun palette handled with
+editorial restraint rather than neon. Influenced by
+[Retrend](https://dribbble.com/shots/18116271-Retrend-NFTs-Landing-Page) by
+Arhansyah APP for Plainthing Studio.
 
 ---
 
@@ -84,7 +85,7 @@ The filter bar appears automatically once there's more than one `medium`.
 | The "Working with" list on About | `_data/toolkit.yml` |
 | Colours, fonts, spacing | the token block at the top of `assets/css/style.css` (re-run the contrast audit after) |
 | Bio copy | `about.html` |
-| Intro headline | `author.blurb` in `_config.yml` |
+| Intro headline | `author.blurb_lead` / `blurb_accent` in `_config.yml` |
 | Profile picture | `assets/images/profile.jpg` |
 
 The site is branded as **JSM85** throughout — no real name appears anywhere
@@ -99,20 +100,35 @@ python3 script/contrast-audit.py
 ```
 
 It reads the palette tokens straight out of `assets/css/style.css` and checks
-every text/background pair in the design against WCAG 2.1 — including the
-awkward ones, like a label sitting on a grid line behind the intro, or text on
-the lightbox scrim. Change the accent, re-run it, and it'll tell you what
-broke. No dependencies.
+every text/background pair against WCAG 2.1 — including the awkward ones: every
+stop of the sunset gradient (both as headline text and as the fill behind
+button labels), the radial that brightens the top of every page, the lightbox
+scrim, and the intro copy sitting over the horizon glow. Change the palette,
+re-run it, and it'll tell you what broke. No dependencies.
 
-Currently 30 pairs, all passing AA, most passing AAA. The build was also run
-through axe-core across every page plus the open lightbox and open mobile menu:
-0 violations.
+Currently 44 pairs, all passing AA and most passing AAA, with the tightest at
+1.25x its threshold.
+
+Two notes on how the intro stays legible:
+
+- The glow's `mask-image` on `.intro::after` is load-bearing, not decoration.
+  Together with the intro's bottom padding it keeps the bright core of the
+  horizon off the copy. See the comment on that rule in `style.css`.
+- The `INTRO_BG` values in the audit are the brightest pixel actually rendered
+  behind each element, sampled from the live page at 390 / 900 / 1280px wide.
+  A flat worst-case model is misleading over a radial gradient. The script
+  documents how to re-measure them if the hero layout changes.
+
+The build was also run through axe-core across every page plus the open
+lightbox and open mobile menu: **0 violations**. Everything axe reports as
+"needs review" is a case it cannot compute — an element over a CSS gradient or
+pseudo-element — which is precisely what the sampling above covers.
 
 ## Fonts
 
-Space Grotesk and IBM Plex Mono are self-hosted from `assets/fonts/` (latin and
-latin-ext subsets only, ~120 KB total, both SIL Open Font License). Pages make
-no third-party requests.
+Syne (display), Space Grotesk (body) and IBM Plex Mono (labels) are self-hosted
+from `assets/fonts/` — latin and latin-ext subsets only, ~170 KB total, all
+under the SIL Open Font License. Pages make no third-party requests.
 
 ---
 
