@@ -7,6 +7,8 @@
   },
 
   "onCreateCommand": "bash .devcontainer/setup.sh",
+  "updateContentCommand": "bundle install",
+  "waitFor": "onCreateCommand",
 
   "forwardPorts": [4000, 35729],
   "portsAttributes": {
@@ -15,7 +17,7 @@
   },
 
   "postAttachCommand": {
-    "hint": "echo '\\n  Run: bundle exec jekyll serve --livereload  →  http://localhost:4000\\n'"
+    "hint": "printf '\\n  bundle exec jekyll serve --livereload  →  http://localhost:4000\\n\\n'"
   },
 
   "customizations": {

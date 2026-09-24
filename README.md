@@ -16,19 +16,35 @@ Arhansyah APP for Plainthing Studio.
 
 ### With the dev container (recommended)
 
-Open the repo in VS Code and choose **Reopen in Container**, or run
-`devcontainer up` with the CLI. Gems install automatically on first create.
+Needs [Docker](https://www.docker.com/products/docker-desktop/) and either
+VS Code with the
+[Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers),
+or the [`devcontainer` CLI](https://github.com/devcontainers/cli).
+
+- **VS Code** — open the repo and choose **Reopen in Container** when prompted
+  (or run *Dev Containers: Reopen in Container* from the command palette).
+- **CLI** — `devcontainer up --workspace-folder .`
+
+First build takes a few minutes while it pulls the image; after that it's
+seconds. Gems install automatically into `vendor/bundle`, and a changed
+`Gemfile` re-installs on the next rebuild.
 
 ```bash
 bundle exec jekyll serve --livereload
 ```
 
-The site is then on <http://localhost:4000>. Port 4000 is forwarded and
-LiveReload (35729) refreshes the page as you save.
+The site is then on <http://localhost:4000>. Port 4000 is forwarded and opens
+a preview automatically; LiveReload (35729) refreshes the page as you save.
+
+What's in the container: Ruby (matching `.ruby-version`, which CI also reads),
+Bundler, Git, the GitHub CLI, Python 3 for the contrast audit, and the VS Code
+extensions for Ruby, Liquid templates and EditorConfig.
 
 ### Without the dev container
 
-Needs Ruby 3.2+ and Bundler.
+Needs Ruby (see `.ruby-version`) and Bundler — via
+[rbenv](https://github.com/rbenv/rbenv), [mise](https://mise.jdx.dev),
+[asdf](https://asdf-vm.com) or your package manager.
 
 ```bash
 bundle install
@@ -87,6 +103,7 @@ The filter bar appears automatically once there's more than one `medium`.
 | Bio copy | `about.html` |
 | Intro headline | `author.blurb_lead` / `blurb_accent` in `_config.yml` |
 | Profile picture | `assets/images/profile.jpg` |
+| Ruby version (local + CI) | `.ruby-version` |
 
 The site is branded as **JSM85** throughout — no real name appears anywhere
 except behind the LinkedIn link.
