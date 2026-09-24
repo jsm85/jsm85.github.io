@@ -1,0 +1,43 @@
+{
+  "name": "jsm85.github.io (Jekyll)",
+  "image": "mcr.microsoft.com/devcontainers/ruby:1-3.3-bookworm",
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "updateContentCommand": "bundle install",
+  "waitFor": "onCreateCommand",
+
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": { "label": "Jekyll site", "onAutoForward": "openPreview" },
+    "35729": { "label": "LiveReload", "onAutoForward": "silent" }
+  },
+
+  "postAttachCommand": {
+    "hint": "printf '\\n  bundle exec jekyll serve --livereload  →  http://localhost:4000\\n\\n'"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "sissel.shopify-liquid",
+        "yzhang.markdown-all-in-one",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.associations": { "*.html": "liquid" },
+        "[liquid]": { "editor.defaultFormatter": "Shopify.ruby-lsp" },
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}

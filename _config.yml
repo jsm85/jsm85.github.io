@@ -1,24 +1,94 @@
-title: 			JSM85
-description: 	'Blogging from the London Underground!'
-blog_url: 		http://jsm85.github.io
+# ─────────────────────────────────────────────────────────────
+#  JSM85 — site configuration
+#  Jekyll 4.x. Restart `bundle exec jekyll serve` after editing.
+# ─────────────────────────────────────────────────────────────
+
+title: JSM85
+tagline: Software and drawings
+description: >-
+  Write-ups on the software I build, and a gallery of the artwork I make
+  when I'm not building it.
+url: https://jsm85.github.io
+baseurl: ""
+lang: en-GB
+timezone: Europe/London
 
 author:
-  name: 		'Joe Mendonca'
-  email: 		jsmendonca@gmail.com
-  github_id: 	jsm85
-  twitter_id: 	JSMendonca85
-  linkedin_id: 	jsm85
+  # Shown as the site byline. Deliberately the handle, not a name.
+  name: JSM85
+  # The intro headline, split across two lines. The second carries the
+  # sunset gradient — keep it the shorter, punchier half.
+  blurb_lead: I build software.
+  blurb_accent: In the gaps, I draw.
+  github: jsm85
+  linkedin: jsm85
 
-safe: 			true
-timezone: 		Europe/London
+# Links rendered in the footer. Add or remove freely.
+social:
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/jsm85
+    icon: linkedin
+  - name: GitHub
+    url: https://github.com/jsm85
+    icon: github
 
+# ── Build ────────────────────────────────────────────────────
+markdown: kramdown
+highlighter: rouge
+permalink: /work/:year/:month/:title/
+excerpt_separator: <!--more-->
 
-markdown: 		kramdown
-permalink: pretty
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate-v2
 
-prose:
-  rooturl: 		'_posts'
-  media:		'assets'
+feed:
+  path: /feed.xml
 
-google_analytics_tracking_id: UA-39754237-1
+sass:
+  style: compressed
+
+# ── Blog pagination ──────────────────────────────────────────
+pagination:
+  enabled: true
+  per_page: 8
+  permalink: "/page/:num/"
+  title: ":title — page :num"
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+autopages:
+  enabled: false
+
+# ── Front matter defaults ────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .devcontainer
+  - .github
+  - .jekyll-cache
+  - node_modules

@@ -1,24 +1,105 @@
 ---
-layout: default
-title: Index
+layout: base
+title: Home
+nav: home
+description: Write-ups on the software I build, and a gallery of the artwork I make when I'm not building it.
+body_class: home
 ---
 
-{% for post in site.posts limit:5 %}
-<div class="card">
-    <!-- <img src="/assets/blog.jpg" class="about-me-img"/> -->
-    <div style="margin-bottom:30px;">
-	    	<h1>{{ post.title }}</h1>
-	    	<p>{{ post.excerpt }}</p>
-    	
-</div>
-	<div class="panel-footer">
-	<a href="{{ post.url }}"><button class="btn btn-fab btn-raised btn-primary button-offset"><i class="mdi-navigation-arrow-forward"></i></button></a>
-    	
-<i>Posted on {{ post.date | date_to_string }}</i>
-   		
-	</div>
-</div>
-{% endfor %}
+<!-- ── Intro ───────────────────────────────────────────────── -->
+<section class="intro">
+  <span class="intro__floor" aria-hidden="true"></span>
+  <span class="intro__horizon" aria-hidden="true"></span>
 
+  <div class="wrap wrap--wide intro__inner">
+    <div class="intro__copy">
+      <p class="label"><span class="label__index">00</span>Developer · London</p>
 
+      <h1 class="h1 h1--lead">
+        {{ site.author.blurb_lead }}
+        <span class="grad">{{ site.author.blurb_accent }}</span>
+      </h1>
 
+      <p class="lede">
+        This is where the two end up. Write-ups on the things I build, and a
+        gallery of the drawings I make when I'm not building them.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn--primary" href="{{ '/work/' | relative_url }}">Read the work</a>
+        <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
+           rel="me noopener" target="_blank">
+          LinkedIn<span class="nav-out__mark" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="intro__portrait">
+      <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+           alt="Cartoon drawing used as my avatar" width="460" height="460">
+    </div>
+  </div>
+</section>
+
+<!-- ── Recent work ─────────────────────────────────────────── -->
+<section class="section" aria-labelledby="work-title">
+  <div class="wrap wrap--wide">
+    <div class="section__head">
+      <p class="label"><span class="label__index">01</span>Work</p>
+      <h2 id="work-title" class="h2">Recent <span class="grad">write-ups</span></h2>
+      <a class="link-more" href="{{ '/work/' | relative_url }}">All entries →</a>
+    </div>
+
+    {%- assign recent = site.posts | slice: 0, 4 %}
+    {%- if recent.size > 0 %}
+    <ol class="entry-list">
+      {%- for post in recent %}
+        {% include entry-row.html post=post %}
+      {%- endfor %}
+    </ol>
+    {%- else %}
+    <p class="empty">Nothing published yet.</p>
+    {%- endif %}
+  </div>
+</section>
+
+<!-- ── Art ─────────────────────────────────────────────────── -->
+<section class="section section--alt" aria-labelledby="art-title">
+  <div class="wrap wrap--wide">
+    <div class="section__head">
+      <p class="label"><span class="label__index">02</span>Art</p>
+      <h2 id="art-title" class="h2">From the <span class="grad">gallery</span></h2>
+      <a class="link-more" href="{{ '/art/' | relative_url }}">Full gallery →</a>
+    </div>
+
+    {%- assign preview = site.data.artwork | slice: 0, 3 %}
+    {%- if preview.size > 0 %}
+    <div class="art-grid">
+      {%- for piece in preview %}
+        {% include art-tile.html piece=piece %}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="empty">Nothing hung yet.</p>
+    {%- endif %}
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────── -->
+<section class="section section--contact" aria-labelledby="contact-title">
+  <div class="wrap wrap--wide">
+    <p class="label"><span class="label__index">03</span>Contact</p>
+    <h2 id="contact-title" class="h2">Get in <span class="grad">touch</span></h2>
+    <p class="lede">
+      LinkedIn is the only social account I keep up with, so it's the surest
+      way to reach me.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--primary"
+         href="https://www.linkedin.com/in/{{ site.author.linkedin }}"
+         rel="me noopener" target="_blank">
+        Connect on LinkedIn<span class="nav-out__mark" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>

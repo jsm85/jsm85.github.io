@@ -1,0 +1,23 @@
+{%- assign p = include.post -%}
+<li class="entry">
+  <a class="entry__link" href="{{ p.url | relative_url }}">
+    <time class="entry__date" datetime="{{ p.date | date_to_xmlschema }}">
+      <span class="entry__year">{{ p.date | date: "%Y" }}</span>
+      <span class="entry__day">{{ p.date | date: "%d %b" }}</span>
+    </time>
+
+    <span class="entry__body">
+      <span class="entry__title">{{ p.title }}</span>
+      <span class="entry__blurb">
+        {{ p.description | default: p.excerpt | strip_html | truncate: 170 }}
+      </span>
+      {%- if p.tags and p.tags.size > 0 %}
+      <span class="entry__tags">
+        {%- for t in p.tags limit: 4 %}<span class="tag">{{ t }}</span>{% endfor -%}
+      </span>
+      {%- endif %}
+    </span>
+
+    <span class="entry__arrow" aria-hidden="true">→</span>
+  </a>
+</li>

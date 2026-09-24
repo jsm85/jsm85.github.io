@@ -1,0 +1,39 @@
+---
+layout: base
+title: Work
+nav: work
+permalink: /work/
+subtitle: >-
+  Notes on the things I build. Occasional rather than regular — I write one
+  when a project is worth writing up.
+pagination:
+  enabled: true
+---
+
+{% include page-head.html index="01" label="Work" title="Project" accent="log" %}
+
+<div class="wrap wrap--wide section">
+  {%- assign items = paginator.posts | default: site.posts %}
+  {%- if items.size > 0 %}
+  <ol class="entry-list">
+    {%- for post in items %}
+      {% include entry-row.html post=post %}
+    {%- endfor %}
+  </ol>
+
+  {%- if paginator and paginator.total_pages > 1 %}
+  <nav class="pager" aria-label="Pagination">
+    {%- if paginator.previous_page %}
+      <a class="btn" href="{{ paginator.previous_page_path | relative_url }}">Newer</a>
+    {%- else %}<span></span>{% endif %}
+    <span class="pager__count">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+    {%- if paginator.next_page %}
+      <a class="btn" href="{{ paginator.next_page_path | relative_url }}">Older</a>
+    {%- else %}<span></span>{% endif %}
+  </nav>
+  {%- endif %}
+
+  {%- else %}
+  <p class="empty">Nothing published yet.</p>
+  {%- endif %}
+</div>

@@ -1,10 +1,82 @@
 ---
-layout: default
-title: About Me
+layout: base
+title: About
+nav: about
+permalink: /about/
+description: A developer in London who builds software and draws in the gaps.
 ---
 
-<div id="about" class="card">
-	<h1>About Me</h1>
-</br>
-<spac>Coming soon...</span>
+{% include page-head.html index="03" label="About" title="About" accent="me" %}
+
+<div class="wrap wrap--wide section about">
+
+  <div class="about__main prose">
+    <p class="prose__lede">
+      I'm a software developer based in London. I've spent most of my working
+      life on the back end — services, data, and the unglamorous plumbing that
+      keeps other people's software upright.
+    </p>
+
+    <p>
+      I like problems that look dull from the outside and turn out to have a
+      genuinely interesting shape once you're inside them. Most of what I write
+      here comes out of that: a technique worth remembering, a side project that
+      took an unexpected turn, or a decision I want to be able to explain to
+      myself later.
+    </p>
+
+    <h2>What's here</h2>
+
+    <p>
+      This isn't a blog in the usual sense. I don't post on a schedule and I've
+      no interest in pretending otherwise. When I build something I'm pleased
+      with, it goes in <a href="{{ '/work/' | relative_url }}">Work</a> — what
+      I made, why, and what I'd do differently.
+    </p>
+
+    <p>
+      The other half of the site is the <a href="{{ '/art/' | relative_url }}">gallery</a>.
+      Comics and video games are the two hobbies that have outlasted all the
+      others, and drawing is where they meet. Ink, digital, the occasional pixel
+      piece — it all ends up in there.
+    </p>
+
+    <h2>Elsewhere</h2>
+
+    <p>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
+      is the only social account I keep up with, so that's the best place to
+      reach me. Code lives on
+      <a href="https://github.com/{{ site.author.github }}" rel="me noopener" target="_blank">GitHub</a>.
+    </p>
+  </div>
+
+  <aside class="about__side">
+    <figure class="about__portrait">
+      <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+           alt="Cartoon drawing used as my avatar" width="460" height="460">
+    </figure>
+
+    <div class="note">
+      <p class="label">Working with</p>
+      <ul class="plain-list">
+        {%- for item in site.data.toolkit %}
+        <li>{{ item }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div class="note">
+      <p class="label">Elsewhere</p>
+      <ul class="plain-list">
+        {%- for link in site.social %}
+        <li>
+          <a href="{{ link.url }}" rel="me noopener" target="_blank">
+            {{ link.name }}<span class="nav-out__mark" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </aside>
 </div>

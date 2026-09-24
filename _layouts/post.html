@@ -1,30 +1,57 @@
 ---
-layout: default
+layout: base
 ---
+<article class="post">
+  <header class="page-head">
+    <div class="wrap wrap--prose">
+      <p class="label">
+        <a href="{{ '/work/' | relative_url }}">Work</a>
+        <span class="label__sep" aria-hidden="true">/</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+      </p>
 
-<div class="post padding-fix card">
-	<h2>{{ page.title }}</h2>
+      <h1 class="h1">{{ page.title }}</h1>
 
-	<div>
-		<p class="meta">{{ page.date | date_to_string }}</p>
+      {%- if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
 
-		{% for category in page.categories %}
-		<span class="label label-primary">{{ category | capitalize }}</span>
-		{% endfor %}
+      <p class="post__meta">
+        {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
+        {%- if page.tags and page.tags.size > 0 %}
+        <span class="label__sep" aria-hidden="true">/</span>
+        {%- for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor -%}
+        {%- endif %}
+      </p>
+    </div>
+  </header>
 
-		{% for tag in page.tags %}
-		<span class="label label-success">{{ tag | capitalize }}</span>
-		{% endfor %}
+  {%- if page.hero %}
+  <div class="wrap wrap--prose">
+    <figure class="post__hero">
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+    </figure>
+  </div>
+  {%- endif %}
 
-	</div>
+  <div class="wrap wrap--prose prose">
+    {{ content }}
+  </div>
 
-</br>
-
-<div>
-	{{ content }}
-</div>
-</div>
-
-
-
-
+  {%- if page.previous or page.next %}
+  <div class="wrap wrap--prose">
+    <nav class="post-nav" aria-label="More posts">
+      {%- if page.previous %}
+      <a class="post-nav__link" href="{{ page.previous.url | relative_url }}">
+        <span class="post-nav__dir">← Previous</span>
+        <span class="post-nav__title">{{ page.previous.title }}</span>
+      </a>
+      {%- else %}<span></span>{% endif %}
+      {%- if page.next %}
+      <a class="post-nav__link post-nav__link--next" href="{{ page.next.url | relative_url }}">
+        <span class="post-nav__dir">Next →</span>
+        <span class="post-nav__title">{{ page.next.title }}</span>
+      </a>
+      {%- else %}<span></span>{% endif %}
+    </nav>
+  </div>
+  {%- endif %}
+</article>

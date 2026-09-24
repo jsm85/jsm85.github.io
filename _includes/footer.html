@@ -1,0 +1,21 @@
+<footer class="site-foot">
+  <div class="wrap wrap--wide site-foot__inner">
+    <p class="site-foot__brand">{{ site.title }}</p>
+
+    <ul class="site-foot__links">
+      {%- for link in site.social %}
+      <li>
+        <a href="{{ link.url }}" rel="me noopener" target="_blank">
+          {{ link.name }}<span class="nav-out__mark" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      {%- endfor %}
+      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+    </ul>
+
+    <p class="site-foot__colophon">
+      &copy; {{ 'now' | date: "%Y" }} · Built with
+      <a href="https://jekyllrb.com">Jekyll</a>
+    </p>
+  </div>
+</footer>
